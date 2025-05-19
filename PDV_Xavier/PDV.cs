@@ -22,9 +22,19 @@ namespace PDV_Xavier
             Console.WriteLine("Iniciando o PDV");
             Console.WriteLine(connectionString);
             InitializeComponent();
-            if (connectionString != null)
+            try
             {
-                db = new AppDbContext(connectionString);
+
+                if (connectionString != null)
+                {
+                    db = new AppDbContext(connectionString);
+                    db.Database.EnsureCreated();
+                    lbl_bdStatus.Text = "Conexão com banco estabelecida";
+                }
+            }
+            catch
+            {
+                lbl_bdStatus.Text = "Banco desconectado";
             }
         }
 
@@ -35,13 +45,21 @@ namespace PDV_Xavier
             dialog.Title = "Selecione o banco de dados Access";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
+                try
+                {
+
                 string caminhoBanco = dialog.FileName;
                 db = new AppDbContext(caminhoBanco);
                 db.Database.EnsureCreated(); // cria o banco se não existir
-                Console.WriteLine("Conectando ao banco");
                 Properties.Settings.Default.CaminhoBanco = caminhoBanco;
                 Properties.Settings.Default.Save();
-
+                MessageBox.Show("Banco conectado com sucesso");
+                lbl_bdStatus.Text = "Conexão com banco estabelecida";
+                }
+                catch
+                {
+                    MessageBox.Show("Erro ao se conectar ao banco");
+                }
             }
         }
 
@@ -65,6 +83,12 @@ namespace PDV_Xavier
         private void list_produtos_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show(list_produtos.SelectedValue.ToString());
+        }
+
+        private void btn_gerenciar_Click(object sender, EventArgs e)
+        {
+            var gerencial = new Tela_Gerencial();
+            gerencial.Show();
         }
     }
 }

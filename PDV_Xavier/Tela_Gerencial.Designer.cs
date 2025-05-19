@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tela_Gerencial));
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tab_clientes = new System.Windows.Forms.TabPage();
+            this.btn_cadastrarCliente = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbl_email = new System.Windows.Forms.Label();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -57,7 +59,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
-            this.btn_cadastrarCliente = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -105,6 +106,17 @@
             this.tab_clientes.TabIndex = 0;
             this.tab_clientes.Text = "Contatos";
             this.tab_clientes.UseVisualStyleBackColor = true;
+            // 
+            // btn_cadastrarCliente
+            // 
+            this.btn_cadastrarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cadastrarCliente.Location = new System.Drawing.Point(390, 250);
+            this.btn_cadastrarCliente.Name = "btn_cadastrarCliente";
+            this.btn_cadastrarCliente.Size = new System.Drawing.Size(109, 35);
+            this.btn_cadastrarCliente.TabIndex = 11;
+            this.btn_cadastrarCliente.Text = "Cadastrar Contatos";
+            this.btn_cadastrarCliente.UseVisualStyleBackColor = true;
+            this.btn_cadastrarCliente.Click += new System.EventHandler(this.btn_cadastrarCliente_Click);
             // 
             // panel8
             // 
@@ -370,17 +382,6 @@
             this.txt_codigo.Size = new System.Drawing.Size(300, 20);
             this.txt_codigo.TabIndex = 0;
             // 
-            // btn_cadastrarCliente
-            // 
-            this.btn_cadastrarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cadastrarCliente.Location = new System.Drawing.Point(390, 250);
-            this.btn_cadastrarCliente.Name = "btn_cadastrarCliente";
-            this.btn_cadastrarCliente.Size = new System.Drawing.Size(109, 35);
-            this.btn_cadastrarCliente.TabIndex = 11;
-            this.btn_cadastrarCliente.Text = "Cadastrar Contatos";
-            this.btn_cadastrarCliente.UseVisualStyleBackColor = true;
-            this.btn_cadastrarCliente.Click += new System.EventHandler(this.btn_cadastrarCliente_Click);
-            // 
             // Tela_Gerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +390,7 @@
             this.ClientSize = new System.Drawing.Size(549, 352);
             this.Controls.Add(this.tabs);
             this.Controls.Add(this.lbl_titulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tela_Gerencial";
             this.Text = "Tela_Gerencial";
             this.tabs.ResumeLayout(false);

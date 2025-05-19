@@ -17,7 +17,7 @@ namespace PDV_Xavier
             SQLitePCL.Batteries_V2.Init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tela_Gerencial());
+            Application.Run(new PDV());
         }
     }
 }
