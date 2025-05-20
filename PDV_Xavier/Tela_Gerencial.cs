@@ -13,10 +13,48 @@ namespace PDV_Xavier
     public partial class Tela_Gerencial : Form
     {
         AppDbContext db;
+        private string connectionString = Properties.Settings.Default.CaminhoBanco;
         public Tela_Gerencial()
         {
             InitializeComponent();
-            db = new AppDbContext(Properties.Settings.Default.CaminhoBanco);
+            try
+            {
+                if (connectionString != null)
+                {
+                    db = new AppDbContext(connectionString);
+                    db.Database.EnsureCreated();
+                    lbl_bdStatus.Text = "Conexão com banco estabelecida";
+                }
+            }
+            catch
+            {
+                lbl_bdStatus.Text = "Banco desconectado";
+            }
+        }
+
+        private void btn_conectar_banco_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.Filter = "Banco de Dados Access (*.accdb)|*.accdb|Access 2003 (*.mdb)|*.mdb";
+            dialog.Title = "Selecione o banco de dados Access";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+
+                    string caminhoBanco = dialog.FileName;
+                    db = new AppDbContext(caminhoBanco);
+                    db.Database.EnsureCreated(); // cria o banco se não existir
+                    Properties.Settings.Default.CaminhoBanco = caminhoBanco;
+                    Properties.Settings.Default.Save();
+                    MessageBox.Show("Banco conectado com sucesso");
+                    lbl_bdStatus.Text = "Conexão com banco estabelecida";
+                }
+                catch
+                {
+                    MessageBox.Show("Erro ao se conectar ao banco");
+                }
+            }
         }
 
         private void tab_produtos_Enter(object sender, EventArgs e)
@@ -30,7 +68,6 @@ namespace PDV_Xavier
         private void txt_preco_TextChanged(object sender, EventArgs e)
         {
             string texto = txt_preco.Text.Replace("R$", "").Replace(",", "").Replace(".", "").TrimStart('0');
-
             if (decimal.TryParse(texto, out decimal valor))
             {
                 valor = valor / 100;

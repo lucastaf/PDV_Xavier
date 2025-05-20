@@ -24,44 +24,16 @@ namespace PDV_Xavier
             InitializeComponent();
             try
             {
-
-                if (connectionString != null)
-                {
-                    db = new AppDbContext(connectionString);
-                    db.Database.EnsureCreated();
-                    lbl_bdStatus.Text = "Conexão com banco estabelecida";
-                }
+                db = new AppDbContext(Properties.Settings.Default.CaminhoBanco);
+                db.Database.EnsureCreated();
             }
             catch
             {
-                lbl_bdStatus.Text = "Banco desconectado";
+                MessageBox.Show("Banco não encontrado, por favor conecte um banco de dados no menu gerencial");
             }
         }
 
-        private void btn_conectar_banco_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dialog = new OpenFileDialog();
-            //dialog.Filter = "Banco de Dados Access (*.accdb)|*.accdb|Access 2003 (*.mdb)|*.mdb";
-            dialog.Title = "Selecione o banco de dados Access";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
 
-                string caminhoBanco = dialog.FileName;
-                db = new AppDbContext(caminhoBanco);
-                db.Database.EnsureCreated(); // cria o banco se não existir
-                Properties.Settings.Default.CaminhoBanco = caminhoBanco;
-                Properties.Settings.Default.Save();
-                MessageBox.Show("Banco conectado com sucesso");
-                lbl_bdStatus.Text = "Conexão com banco estabelecida";
-                }
-                catch
-                {
-                    MessageBox.Show("Erro ao se conectar ao banco");
-                }
-            }
-        }
 
         private void txt_productName_KeyDown(object sender, KeyEventArgs e)
         {
@@ -72,23 +44,76 @@ namespace PDV_Xavier
                 // Consulta ao banco com filtro case-insensitive
                 var produtosFiltrados = db.produtos
                     .Where(p => p.nome.ToLower().Contains(termoBusca))
+                    .Select(p => new
+                    {
+                        Produto = p,
+                        Display = $"{p.codigo} - {p.nome} - {p.preco:C}" // Formata o preço como moeda
+                    })
                     .ToList(); // Importante materializar a lista antes de usar como DataSource
 
-                list_produtos.DisplayMember = "nome";
-                list_produtos.ValueMember = "codigo";
+                list_produtos.DisplayMember = "Display";
+                list_produtos.ValueMember = "Produto";
                 list_produtos.DataSource = produtosFiltrados;
             }
-        }
-
-        private void list_produtos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(list_produtos.SelectedValue.ToString());
         }
 
         private void btn_gerenciar_Click(object sender, EventArgs e)
         {
             var gerencial = new Tela_Gerencial();
             gerencial.Show();
+        }
+
+        private void btn_adicionarProduto_Click(object sender, EventArgs e)
+        {
+            Produtos selectedValue = (Produtos)list_produtos.SelectedValue;
+            var quantidade = (int)nud_quantidadeProdutos.Value; 
+            dgv_produtosSelecionados.Rows.Add(selectedValue.nome, quantidade, selectedValue.preco * quantidade);
+            recalcularValorTotal();
+        }
+
+        private void btn_removerSelecao_Click(object sender, EventArgs e)
+        {
+            dgv_produtosSelecionados.Rows.RemoveAt(dgv_produtosSelecionados.CurrentRow.Index);
+            recalcularValorTotal();
+        }
+
+        private void recalcularValorTotal()
+        {
+            decimal total = 0;
+            foreach (DataGridViewRow row in dgv_produtosSelecionados.Rows)
+            {
+                if (row.Cells["valor"].Value != null)
+                {
+                    total += Convert.ToDecimal(row.Cells["valor"].Value);
+                }
+            }
+            txt_valorFinal.Text = $"{total:C}";
+        }
+
+        private void dgv_produtosSelecionados_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            recalcularValorTotal();
+        }
+
+        private void txt_valorFinal_TextChanged(object sender, EventArgs e)
+        {
+            string texto = txt_valorFinal.Text.Replace("R$", "").Replace(",", "").Replace(".", "").TrimStart('0');
+            if (decimal.TryParse(texto, out decimal valor))
+            {
+                valor = valor / 100;
+                txt_valorFinal.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valor);
+                txt_valorFinal.Select(txt_valorFinal.Text.Length, 0); // mantém o cursor no fim
+            }
+            else
+            {
+                txt_valorFinal.Text = "R$ 0,00";
+                txt_valorFinal.Select(txt_valorFinal.Text.Length, 0);
+            }
+        }
+
+        private void btn_finalizarPedido_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -59,6 +59,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
+            this.tab_banco = new System.Windows.Forms.TabPage();
+            this.lbl_bdStatus = new System.Windows.Forms.Label();
+            this.btn_conectar_banco = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -70,6 +73,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tab_banco.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_titulo
@@ -77,15 +81,16 @@
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Location = new System.Drawing.Point(248, 9);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(79, 13);
+            this.lbl_titulo.Size = new System.Drawing.Size(82, 13);
             this.lbl_titulo.TabIndex = 0;
-            this.lbl_titulo.Text = "Cadastrar items";
+            this.lbl_titulo.Text = "Menu Gerencial";
             // 
             // tabs
             // 
             this.tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tabs.Controls.Add(this.tab_clientes);
             this.tabs.Controls.Add(this.tab_produtos);
+            this.tabs.Controls.Add(this.tab_banco);
             this.tabs.Location = new System.Drawing.Point(12, 23);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
@@ -382,6 +387,38 @@
             this.txt_codigo.Size = new System.Drawing.Size(300, 20);
             this.txt_codigo.TabIndex = 0;
             // 
+            // tab_banco
+            // 
+            this.tab_banco.Controls.Add(this.lbl_bdStatus);
+            this.tab_banco.Controls.Add(this.btn_conectar_banco);
+            this.tab_banco.Location = new System.Drawing.Point(4, 22);
+            this.tab_banco.Name = "tab_banco";
+            this.tab_banco.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_banco.Size = new System.Drawing.Size(517, 291);
+            this.tab_banco.TabIndex = 2;
+            this.tab_banco.Text = "Banco";
+            this.tab_banco.UseVisualStyleBackColor = true;
+            // 
+            // lbl_bdStatus
+            // 
+            this.lbl_bdStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_bdStatus.AutoSize = true;
+            this.lbl_bdStatus.Location = new System.Drawing.Point(150, 39);
+            this.lbl_bdStatus.Name = "lbl_bdStatus";
+            this.lbl_bdStatus.Size = new System.Drawing.Size(85, 13);
+            this.lbl_bdStatus.TabIndex = 5;
+            this.lbl_bdStatus.Text = "Status do banco";
+            // 
+            // btn_conectar_banco
+            // 
+            this.btn_conectar_banco.Location = new System.Drawing.Point(6, 22);
+            this.btn_conectar_banco.Name = "btn_conectar_banco";
+            this.btn_conectar_banco.Size = new System.Drawing.Size(138, 46);
+            this.btn_conectar_banco.TabIndex = 4;
+            this.btn_conectar_banco.Text = "Conectar Banco";
+            this.btn_conectar_banco.UseVisualStyleBackColor = true;
+            this.btn_conectar_banco.Click += new System.EventHandler(this.btn_conectar_banco_Click);
+            // 
             // Tela_Gerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,6 +449,8 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tab_banco.ResumeLayout(false);
+            this.tab_banco.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,5 +488,8 @@
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Button btn_cadastrarCliente;
+        private System.Windows.Forms.TabPage tab_banco;
+        private System.Windows.Forms.Label lbl_bdStatus;
+        private System.Windows.Forms.Button btn_conectar_banco;
     }
 }
