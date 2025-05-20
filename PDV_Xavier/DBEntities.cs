@@ -16,6 +16,7 @@ namespace PDV_Xavier
         public DbSet<Produtos> produtos { get; set; }
         public DbSet<Registros> registros { get; set; }
 
+        public DbSet<Operacoes> operacoes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlite($@"Data Source={connectionPath}");
@@ -48,11 +49,24 @@ namespace PDV_Xavier
         [Key]
         public int id { get; set; }
         public int id_produto { get; set; }
-        public int id_contato { get; set; }
+        public int id_operacao { get; set; }
         public int quantidade { get; set; }
         public decimal valor { get; set; }
+        public string date { get; set; }
+    }
+
+    public class Operacoes
+    {
+        [Key]
+        public int id { get; set; }
+
+        public int id_contato { get; set; }
+
+        public int valor { get; set; }
+
         public string tipo_pagamento { get; set; }
         public string tipo_operacao { get; set; }
-        public string date { get; set; }
+
+        public string criado_em { get; set; }
     }
 }

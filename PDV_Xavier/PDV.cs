@@ -75,14 +75,14 @@ namespace PDV_Xavier
                     .ToList(); // Importante materializar a lista antes de usar como DataSource
 
                 list_produtos.DisplayMember = "nome";
-                list_produtos.ValueMember = "codigo";
                 list_produtos.DataSource = produtosFiltrados;
             }
         }
 
         private void list_produtos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(list_produtos.SelectedValue.ToString());
+            Produtos produtoSelecionado = (Produtos)list_produtos.SelectedItem;
+            Console.WriteLine(produtoSelecionado.nome);
         }
 
         private void btn_gerenciar_Click(object sender, EventArgs e)
