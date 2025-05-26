@@ -30,6 +30,8 @@ namespace PDV_Xavier
         public string nome { get; set; }
         public string telefone { get; set; }
         public string email { get; set; }
+
+        public int is_fornecedor { get; set; } // 0 - cliente, 1 - fornecedor
     }
 
     public class Produtos
@@ -48,11 +50,19 @@ namespace PDV_Xavier
         [Key]
         public int id { get; set; }
         public int id_produto { get; set; }
+        public int id_operacao { get; set; } // Referência à tabela Operacoes
+        public int quantidade { get; set; } // quantidade de produtos vendidos ou comprados
+        public float valor { get; set; } // valor total da operação
+    }
+
+    public class Operacoes
+    {
+        [Key]
+        public int id { get; set; }
         public int id_contato { get; set; }
-        public int quantidade { get; set; }
-        public decimal valor { get; set; }
+        public float valor { get; set; }
         public string tipo_pagamento { get; set; }
-        public string tipo_operacao { get; set; }
-        public string date { get; set; }
+        public string tipo_operacao { get; set; } // venda, compra, etc.
+        public string criado_em { get; set; } // data de criação
     }
 }

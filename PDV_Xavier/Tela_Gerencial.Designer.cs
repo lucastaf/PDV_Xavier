@@ -62,6 +62,9 @@
             this.tab_banco = new System.Windows.Forms.TabPage();
             this.lbl_bdStatus = new System.Windows.Forms.Label();
             this.btn_conectar_banco = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lbl_isFornecedor = new System.Windows.Forms.Label();
+            this.chk_isFornecedor = new System.Windows.Forms.CheckBox();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -74,6 +77,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tab_banco.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_titulo
@@ -100,6 +104,7 @@
             // tab_clientes
             // 
             this.tab_clientes.AutoScroll = true;
+            this.tab_clientes.Controls.Add(this.panel9);
             this.tab_clientes.Controls.Add(this.btn_cadastrarCliente);
             this.tab_clientes.Controls.Add(this.panel8);
             this.tab_clientes.Controls.Add(this.panel7);
@@ -419,6 +424,35 @@
             this.btn_conectar_banco.UseVisualStyleBackColor = true;
             this.btn_conectar_banco.Click += new System.EventHandler(this.btn_conectar_banco_Click);
             // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.Controls.Add(this.chk_isFornecedor);
+            this.panel9.Controls.Add(this.lbl_isFornecedor);
+            this.panel9.Location = new System.Drawing.Point(17, 143);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(482, 34);
+            this.panel9.TabIndex = 4;
+            // 
+            // lbl_isFornecedor
+            // 
+            this.lbl_isFornecedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_isFornecedor.AutoSize = true;
+            this.lbl_isFornecedor.Location = new System.Drawing.Point(6, 10);
+            this.lbl_isFornecedor.Name = "lbl_isFornecedor";
+            this.lbl_isFornecedor.Size = new System.Drawing.Size(122, 13);
+            this.lbl_isFornecedor.TabIndex = 0;
+            this.lbl_isFornecedor.Text = "Contato é de fornecedor";
+            // 
+            // chk_isFornecedor
+            // 
+            this.chk_isFornecedor.AutoSize = true;
+            this.chk_isFornecedor.Location = new System.Drawing.Point(464, 9);
+            this.chk_isFornecedor.Name = "chk_isFornecedor";
+            this.chk_isFornecedor.Size = new System.Drawing.Size(15, 14);
+            this.chk_isFornecedor.TabIndex = 1;
+            this.chk_isFornecedor.UseVisualStyleBackColor = true;
+            // 
             // Tela_Gerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +485,8 @@
             this.panel1.PerformLayout();
             this.tab_banco.ResumeLayout(false);
             this.tab_banco.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,5 +527,8 @@
         private System.Windows.Forms.TabPage tab_banco;
         private System.Windows.Forms.Label lbl_bdStatus;
         private System.Windows.Forms.Button btn_conectar_banco;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label lbl_isFornecedor;
+        private System.Windows.Forms.CheckBox chk_isFornecedor;
     }
 }

@@ -34,6 +34,11 @@ namespace PDV_Xavier
         }
 
 
+        private void btn_gerenciar_Click(object sender, EventArgs e)
+        {
+            var gerencial = new Tela_Gerencial();
+            gerencial.Show();
+        }
 
         private void txt_productName_KeyDown(object sender, KeyEventArgs e)
         {
@@ -57,11 +62,6 @@ namespace PDV_Xavier
             }
         }
 
-        private void btn_gerenciar_Click(object sender, EventArgs e)
-        {
-            var gerencial = new Tela_Gerencial();
-            gerencial.Show();
-        }
 
         private void btn_adicionarProduto_Click(object sender, EventArgs e)
         {
@@ -77,6 +77,11 @@ namespace PDV_Xavier
             recalcularValorTotal();
         }
 
+        private void dgv_produtosSelecionados_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            recalcularValorTotal();
+        }
+
         private void recalcularValorTotal()
         {
             decimal total = 0;
@@ -88,11 +93,6 @@ namespace PDV_Xavier
                 }
             }
             txt_valorFinal.Text = $"{total:C}";
-        }
-
-        private void dgv_produtosSelecionados_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            recalcularValorTotal();
         }
 
         private void txt_valorFinal_TextChanged(object sender, EventArgs e)

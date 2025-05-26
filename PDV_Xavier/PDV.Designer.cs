@@ -92,7 +92,7 @@
             this.dgv_produtosSelecionados.Location = new System.Drawing.Point(416, 72);
             this.dgv_produtosSelecionados.Name = "dgv_produtosSelecionados";
             this.dgv_produtosSelecionados.RowHeadersVisible = false;
-            this.dgv_produtosSelecionados.Size = new System.Drawing.Size(306, 303);
+            this.dgv_produtosSelecionados.Size = new System.Drawing.Size(305, 303);
             this.dgv_produtosSelecionados.TabIndex = 6;
             this.dgv_produtosSelecionados.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_produtosSelecionados_CellEndEdit);
             // 
@@ -153,7 +153,7 @@
             // btn_removerSelecao
             // 
             this.btn_removerSelecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_removerSelecao.Location = new System.Drawing.Point(601, 52);
+            this.btn_removerSelecao.Location = new System.Drawing.Point(600, 52);
             this.btn_removerSelecao.Name = "btn_removerSelecao";
             this.btn_removerSelecao.Size = new System.Drawing.Size(121, 20);
             this.btn_removerSelecao.TabIndex = 10;
@@ -164,7 +164,7 @@
             // btn_finalizarPedido
             // 
             this.btn_finalizarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_finalizarPedido.Location = new System.Drawing.Point(613, 450);
+            this.btn_finalizarPedido.Location = new System.Drawing.Point(612, 450);
             this.btn_finalizarPedido.Name = "btn_finalizarPedido";
             this.btn_finalizarPedido.Size = new System.Drawing.Size(109, 41);
             this.btn_finalizarPedido.TabIndex = 11;
@@ -175,7 +175,7 @@
             // txt_valorFinal
             // 
             this.txt_valorFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_valorFinal.Location = new System.Drawing.Point(499, 382);
+            this.txt_valorFinal.Location = new System.Drawing.Point(498, 382);
             this.txt_valorFinal.Name = "txt_valorFinal";
             this.txt_valorFinal.Size = new System.Drawing.Size(223, 20);
             this.txt_valorFinal.TabIndex = 12;
@@ -183,6 +183,7 @@
             // 
             // cbo_tipoPagamento
             // 
+            this.cbo_tipoPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_tipoPagamento.FormattingEnabled = true;
             this.cbo_tipoPagamento.Items.AddRange(new object[] {
             "Pix",
@@ -190,7 +191,7 @@
             "Crédito",
             "Dinheiro",
             "Pendente"});
-            this.cbo_tipoPagamento.Location = new System.Drawing.Point(545, 407);
+            this.cbo_tipoPagamento.Location = new System.Drawing.Point(544, 407);
             this.cbo_tipoPagamento.Name = "cbo_tipoPagamento";
             this.cbo_tipoPagamento.Size = new System.Drawing.Size(177, 21);
             this.cbo_tipoPagamento.TabIndex = 14;
@@ -209,7 +210,7 @@
             // 
             this.lbl_valorFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_valorFinal.AutoSize = true;
-            this.lbl_valorFinal.Location = new System.Drawing.Point(440, 385);
+            this.lbl_valorFinal.Location = new System.Drawing.Point(439, 385);
             this.lbl_valorFinal.Name = "lbl_valorFinal";
             this.lbl_valorFinal.Size = new System.Drawing.Size(53, 13);
             this.lbl_valorFinal.TabIndex = 13;
@@ -219,7 +220,7 @@
             // 
             this.lbl_tipoPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_tipoPagamento.AutoSize = true;
-            this.lbl_tipoPagamento.Location = new System.Drawing.Point(440, 410);
+            this.lbl_tipoPagamento.Location = new System.Drawing.Point(439, 410);
             this.lbl_tipoPagamento.Name = "lbl_tipoPagamento";
             this.lbl_tipoPagamento.Size = new System.Drawing.Size(99, 13);
             this.lbl_tipoPagamento.TabIndex = 16;
@@ -229,7 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 503);
+            this.ClientSize = new System.Drawing.Size(733, 503);
             this.Controls.Add(this.lbl_tipoPagamento);
             this.Controls.Add(this.chk_operacaoCompra);
             this.Controls.Add(this.cbo_tipoPagamento);

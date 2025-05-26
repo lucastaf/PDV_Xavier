@@ -103,7 +103,8 @@ namespace PDV_Xavier
             {
                 nome = txt_contato.Text,
                 telefone = mtx_telefone.Text,
-                email = txt_email.Text
+                email = txt_email.Text,
+                is_fornecedor = chk_isFornecedor.Checked ? 1 : 0 // 0 - cliente, 1 - fornecedor
             };
             db.contatos.Add(cliente);
             db.SaveChanges();

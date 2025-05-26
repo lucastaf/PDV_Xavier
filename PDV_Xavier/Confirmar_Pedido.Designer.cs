@@ -1,0 +1,228 @@
+﻿namespace PDV_Xavier
+{
+    partial class Confirmar_Pedido
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_contato = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_tipoPagamento = new System.Windows.Forms.Label();
+            this.lbl_valorTotal = new System.Windows.Forms.Label();
+            this.lbl_tipoOperacao = new System.Windows.Forms.Label();
+            this.lbl_tipoPagamentoHeader = new System.Windows.Forms.Label();
+            this.lbl_valorTotalHeader = new System.Windows.Forms.Label();
+            this.lbl_tipoOperacaoHeader = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.phone,
+            this.email});
+            this.dataGridView1.Location = new System.Drawing.Point(11, 210);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(304, 199);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Nome";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.HeaderText = "Telefone";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 117);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(303, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // lbl_contato
+            // 
+            this.lbl_contato.AutoSize = true;
+            this.lbl_contato.Location = new System.Drawing.Point(13, 101);
+            this.lbl_contato.Name = "lbl_contato";
+            this.lbl_contato.Size = new System.Drawing.Size(92, 13);
+            this.lbl_contato.TabIndex = 2;
+            this.lbl_contato.Text = "Pesquisar contato";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Confirme valores:";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(12, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(303, 36);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lbl_tipoPagamento);
+            this.panel1.Controls.Add(this.lbl_valorTotal);
+            this.panel1.Controls.Add(this.lbl_tipoOperacao);
+            this.panel1.Controls.Add(this.lbl_tipoPagamentoHeader);
+            this.panel1.Controls.Add(this.lbl_valorTotalHeader);
+            this.panel1.Controls.Add(this.lbl_tipoOperacaoHeader);
+            this.panel1.Location = new System.Drawing.Point(16, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(299, 57);
+            this.panel1.TabIndex = 5;
+            // 
+            // lbl_tipoPagamento
+            // 
+            this.lbl_tipoPagamento.AutoSize = true;
+            this.lbl_tipoPagamento.Location = new System.Drawing.Point(146, 40);
+            this.lbl_tipoPagamento.Name = "lbl_tipoPagamento";
+            this.lbl_tipoPagamento.Size = new System.Drawing.Size(10, 13);
+            this.lbl_tipoPagamento.TabIndex = 5;
+            this.lbl_tipoPagamento.Text = "-";
+            // 
+            // lbl_valorTotal
+            // 
+            this.lbl_valorTotal.AutoSize = true;
+            this.lbl_valorTotal.Location = new System.Drawing.Point(146, 22);
+            this.lbl_valorTotal.Name = "lbl_valorTotal";
+            this.lbl_valorTotal.Size = new System.Drawing.Size(10, 13);
+            this.lbl_valorTotal.TabIndex = 4;
+            this.lbl_valorTotal.Text = "-";
+            // 
+            // lbl_tipoOperacao
+            // 
+            this.lbl_tipoOperacao.AutoSize = true;
+            this.lbl_tipoOperacao.Location = new System.Drawing.Point(146, 4);
+            this.lbl_tipoOperacao.Name = "lbl_tipoOperacao";
+            this.lbl_tipoOperacao.Size = new System.Drawing.Size(10, 13);
+            this.lbl_tipoOperacao.TabIndex = 3;
+            this.lbl_tipoOperacao.Text = "-";
+            // 
+            // lbl_tipoPagamentoHeader
+            // 
+            this.lbl_tipoPagamentoHeader.AutoSize = true;
+            this.lbl_tipoPagamentoHeader.Location = new System.Drawing.Point(3, 40);
+            this.lbl_tipoPagamentoHeader.Name = "lbl_tipoPagamentoHeader";
+            this.lbl_tipoPagamentoHeader.Size = new System.Drawing.Size(110, 13);
+            this.lbl_tipoPagamentoHeader.TabIndex = 2;
+            this.lbl_tipoPagamentoHeader.Text = "Forma de pagamento:";
+            // 
+            // lbl_valorTotalHeader
+            // 
+            this.lbl_valorTotalHeader.AutoSize = true;
+            this.lbl_valorTotalHeader.Location = new System.Drawing.Point(3, 22);
+            this.lbl_valorTotalHeader.Name = "lbl_valorTotalHeader";
+            this.lbl_valorTotalHeader.Size = new System.Drawing.Size(61, 13);
+            this.lbl_valorTotalHeader.TabIndex = 1;
+            this.lbl_valorTotalHeader.Text = "Valor Total:";
+            // 
+            // lbl_tipoOperacaoHeader
+            // 
+            this.lbl_tipoOperacaoHeader.AutoSize = true;
+            this.lbl_tipoOperacaoHeader.Location = new System.Drawing.Point(3, 4);
+            this.lbl_tipoOperacaoHeader.Name = "lbl_tipoOperacaoHeader";
+            this.lbl_tipoOperacaoHeader.Size = new System.Drawing.Size(94, 13);
+            this.lbl_tipoOperacaoHeader.TabIndex = 0;
+            this.lbl_tipoOperacaoHeader.Text = "Tipo de operação:";
+            // 
+            // Confirmar_Pedido
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(328, 463);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_contato);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "Confirmar_Pedido";
+            this.Text = "Confirmar pedido";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_contato;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_tipoPagamentoHeader;
+        private System.Windows.Forms.Label lbl_valorTotalHeader;
+        private System.Windows.Forms.Label lbl_tipoOperacaoHeader;
+        private System.Windows.Forms.Label lbl_tipoPagamento;
+        private System.Windows.Forms.Label lbl_valorTotal;
+        private System.Windows.Forms.Label lbl_tipoOperacao;
+    }
+}
