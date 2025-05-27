@@ -63,13 +63,7 @@ namespace PDV_Xavier
         }
 
 
-        private void btn_adicionarProduto_Click(object sender, EventArgs e)
-        {
-            Produtos selectedValue = (Produtos)list_produtos.SelectedValue;
-            var quantidade = (int)nud_quantidadeProdutos.Value; 
-            dgv_produtosSelecionados.Rows.Add(selectedValue.nome, quantidade, selectedValue.preco * quantidade);
-            recalcularValorTotal();
-        }
+
 
         private void btn_removerSelecao_Click(object sender, EventArgs e)
         {
@@ -111,9 +105,30 @@ namespace PDV_Xavier
             }
         }
 
+        private void btn_adicionarProduto_Click(object sender, EventArgs e)
+        {
+            Produtos selectedValue = (Produtos)list_produtos.SelectedValue;
+            var quantidade = (int)nud_quantidadeProdutos.Value;
+            dgv_produtosSelecionados.Rows.Add(selectedValue.id, selectedValue.nome, quantidade, selectedValue.preco * quantidade);
+            recalcularValorTotal();
+        }
         private void btn_finalizarPedido_Click(object sender, EventArgs e)
         {
+            Confirmar_Pedido confirmar_Pedido = new Confirmar_Pedido(
+                dgv_produtosSelecionados.Rows
+                    .Cast<DataGridViewRow>()
+                    .Select(row => new Registros
+                    {
+                        id_produto = Convert.ToInt32(row.Cells["id"].Value),
+                        quantidade = Convert.ToInt32(row.Cells["quantidade"].Value),
+                        valor = Convert.ToSingle(row.Cells["valor"].Value)
+                    }).ToArray(),
+                Convert.ToSingle(txt_valorFinal.Text.Replace("R$", "").Replace(",", ".")),
+                cmb_tipoPagamento.SelectedItem.ToString(),
+                chk_operacaoCompra.Checked ? "Compra" : "Venda"
+            );
 
+            confirmar_Pedido.ShowDialog();
         }
     }
 }

@@ -32,10 +32,10 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_contato = new System.Windows.Forms.TextBox();
             this.lbl_contato = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_confirmar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_tipoPagamento = new System.Windows.Forms.Label();
             this.lbl_valorTotal = new System.Windows.Forms.Label();
@@ -50,19 +50,20 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.phone,
             this.email});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 210);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 143);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(304, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(303, 197);
             this.dataGridView1.TabIndex = 0;
             // 
             // name
@@ -83,12 +84,14 @@
             this.email.Name = "email";
             this.email.ReadOnly = true;
             // 
-            // textBox1
+            // txt_contato
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 117);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 20);
-            this.textBox1.TabIndex = 1;
+            this.txt_contato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_contato.Location = new System.Drawing.Point(16, 117);
+            this.txt_contato.Name = "txt_contato";
+            this.txt_contato.Size = new System.Drawing.Size(298, 20);
+            this.txt_contato.TabIndex = 1;
             // 
             // lbl_contato
             // 
@@ -108,19 +111,21 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Confirme valores:";
             // 
-            // button1
+            // btn_confirmar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_confirmar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(12, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(303, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_confirmar.Location = new System.Drawing.Point(12, 346);
+            this.btn_confirmar.Name = "btn_confirmar";
+            this.btn_confirmar.Size = new System.Drawing.Size(302, 36);
+            this.btn_confirmar.TabIndex = 4;
+            this.btn_confirmar.Text = "Confirmar operação";
+            this.btn_confirmar.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.lbl_tipoPagamento);
             this.panel1.Controls.Add(this.lbl_valorTotal);
             this.panel1.Controls.Add(this.lbl_tipoOperacao);
@@ -129,7 +134,7 @@
             this.panel1.Controls.Add(this.lbl_tipoOperacaoHeader);
             this.panel1.Location = new System.Drawing.Point(16, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 57);
+            this.panel1.Size = new System.Drawing.Size(298, 57);
             this.panel1.TabIndex = 5;
             // 
             // lbl_tipoPagamento
@@ -190,12 +195,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 463);
+            this.ClientSize = new System.Drawing.Size(327, 394);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_confirmar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_contato);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_contato);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Confirmar_Pedido";
             this.Text = "Confirmar pedido";
@@ -213,10 +218,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_contato;
         private System.Windows.Forms.Label lbl_contato;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_confirmar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_tipoPagamentoHeader;
         private System.Windows.Forms.Label lbl_valorTotalHeader;

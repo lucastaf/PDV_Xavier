@@ -33,19 +33,20 @@
             this.txt_productName = new System.Windows.Forms.TextBox();
             this.btn_gerenciar = new System.Windows.Forms.Button();
             this.dgv_produtosSelecionados = new System.Windows.Forms.DataGridView();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_pesquisar = new System.Windows.Forms.Label();
             this.nud_quantidadeProdutos = new System.Windows.Forms.NumericUpDown();
             this.btn_adicionarProduto = new System.Windows.Forms.Button();
             this.btn_removerSelecao = new System.Windows.Forms.Button();
             this.btn_finalizarPedido = new System.Windows.Forms.Button();
             this.txt_valorFinal = new System.Windows.Forms.TextBox();
-            this.cbo_tipoPagamento = new System.Windows.Forms.ComboBox();
+            this.cmb_tipoPagamento = new System.Windows.Forms.ComboBox();
             this.chk_operacaoCompra = new System.Windows.Forms.CheckBox();
             this.lbl_valorFinal = new System.Windows.Forms.Label();
             this.lbl_tipoPagamento = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtosSelecionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantidadeProdutos)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +87,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_produtosSelecionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_produtosSelecionados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.nome,
             this.quantidade,
             this.valor});
@@ -95,22 +97,6 @@
             this.dgv_produtosSelecionados.Size = new System.Drawing.Size(305, 303);
             this.dgv_produtosSelecionados.TabIndex = 6;
             this.dgv_produtosSelecionados.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_produtosSelecionados_CellEndEdit);
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
             // 
             // lbl_pesquisar
             // 
@@ -181,20 +167,20 @@
             this.txt_valorFinal.TabIndex = 12;
             this.txt_valorFinal.TextChanged += new System.EventHandler(this.txt_valorFinal_TextChanged);
             // 
-            // cbo_tipoPagamento
+            // cmb_tipoPagamento
             // 
-            this.cbo_tipoPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbo_tipoPagamento.FormattingEnabled = true;
-            this.cbo_tipoPagamento.Items.AddRange(new object[] {
+            this.cmb_tipoPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_tipoPagamento.FormattingEnabled = true;
+            this.cmb_tipoPagamento.Items.AddRange(new object[] {
             "Pix",
             "Débito",
             "Crédito",
             "Dinheiro",
             "Pendente"});
-            this.cbo_tipoPagamento.Location = new System.Drawing.Point(544, 407);
-            this.cbo_tipoPagamento.Name = "cbo_tipoPagamento";
-            this.cbo_tipoPagamento.Size = new System.Drawing.Size(177, 21);
-            this.cbo_tipoPagamento.TabIndex = 14;
+            this.cmb_tipoPagamento.Location = new System.Drawing.Point(544, 407);
+            this.cmb_tipoPagamento.Name = "cmb_tipoPagamento";
+            this.cmb_tipoPagamento.Size = new System.Drawing.Size(177, 21);
+            this.cmb_tipoPagamento.TabIndex = 14;
             // 
             // chk_operacaoCompra
             // 
@@ -226,6 +212,29 @@
             this.lbl_tipoPagamento.TabIndex = 16;
             this.lbl_tipoPagamento.Text = "Tipo de pagamento";
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            // 
             // PDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,7 +242,7 @@
             this.ClientSize = new System.Drawing.Size(733, 503);
             this.Controls.Add(this.lbl_tipoPagamento);
             this.Controls.Add(this.chk_operacaoCompra);
-            this.Controls.Add(this.cbo_tipoPagamento);
+            this.Controls.Add(this.cmb_tipoPagamento);
             this.Controls.Add(this.lbl_valorFinal);
             this.Controls.Add(this.txt_valorFinal);
             this.Controls.Add(this.btn_finalizarPedido);
@@ -260,19 +269,20 @@
         private System.Windows.Forms.TextBox txt_productName;
         private System.Windows.Forms.Button btn_gerenciar;
         private System.Windows.Forms.DataGridView dgv_produtosSelecionados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
         private System.Windows.Forms.Label lbl_pesquisar;
         private System.Windows.Forms.NumericUpDown nud_quantidadeProdutos;
         private System.Windows.Forms.Button btn_adicionarProduto;
         private System.Windows.Forms.Button btn_removerSelecao;
         private System.Windows.Forms.Button btn_finalizarPedido;
         private System.Windows.Forms.TextBox txt_valorFinal;
-        private System.Windows.Forms.ComboBox cbo_tipoPagamento;
+        private System.Windows.Forms.ComboBox cmb_tipoPagamento;
         private System.Windows.Forms.CheckBox chk_operacaoCompra;
         private System.Windows.Forms.Label lbl_valorFinal;
         private System.Windows.Forms.Label lbl_tipoPagamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }
 }
 
