@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Globalization;
 
 namespace PDV_Xavier
 {
@@ -63,8 +64,6 @@ namespace PDV_Xavier
         }
 
 
-
-
         private void btn_removerSelecao_Click(object sender, EventArgs e)
         {
             dgv_produtosSelecionados.Rows.RemoveAt(dgv_produtosSelecionados.CurrentRow.Index);
@@ -112,23 +111,27 @@ namespace PDV_Xavier
             dgv_produtosSelecionados.Rows.Add(selectedValue.id, selectedValue.nome, quantidade, selectedValue.preco * quantidade);
             recalcularValorTotal();
         }
+
         private void btn_finalizarPedido_Click(object sender, EventArgs e)
         {
-            Confirmar_Pedido confirmar_Pedido = new Confirmar_Pedido(
-                dgv_produtosSelecionados.Rows
-                    .Cast<DataGridViewRow>()
-                    .Select(row => new Registros
-                    {
-                        id_produto = Convert.ToInt32(row.Cells["id"].Value),
-                        quantidade = Convert.ToInt32(row.Cells["quantidade"].Value),
-                        valor = Convert.ToSingle(row.Cells["valor"].Value)
-                    }).ToArray(),
-                Convert.ToSingle(txt_valorFinal.Text.Replace("R$", "").Replace(",", ".")),
-                cmb_tipoPagamento.SelectedItem.ToString(),
-                chk_operacaoCompra.Checked ? "Compra" : "Venda"
-            );
+            Registros[] registros = dgv_produtosSelecionados.Rows
+                .Cast<DataGridViewRow>()
+                .Select(row => new Registros
+                {
+                    id_produto = (int)row.Cells["Id"].Value,
+                    valor = Convert.ToSingle(row.Cells["valor"].Value),
+                    quantidade = (int)row.Cells["quantidade"].Value,
+                })
+                .ToArray();
 
-            confirmar_Pedido.ShowDialog();
+            string valorFinal_string = txt_valorFinal.Text;
+            valorFinal_string = valorFinal_string.Replace("R$ ", "").Replace(".", "").Replace(",", ".");
+            float valor = float.Parse(valorFinal_string, CultureInfo.InvariantCulture.NumberFormat);
+            string tipo_pagamento = cmb_tipoPagamento.Text;
+            string tipo_operacao = chk_operacaoCompra.Checked ? "Compra" : "Venda";
+
+            Confirmar_Pedido confirmar_pedido = new Confirmar_Pedido(registros, valor, tipo_pagamento, tipo_operacao);
+            confirmar_pedido.ShowDialog();
         }
     }
 }

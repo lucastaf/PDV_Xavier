@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.dgv_contatos = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,28 +45,40 @@
             this.lbl_tipoPagamentoHeader = new System.Windows.Forms.Label();
             this.lbl_valorTotalHeader = new System.Windows.Forms.Label();
             this.lbl_tipoOperacaoHeader = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_adicionarContato = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_contatos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_contatos
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_contatos.AllowUserToAddRows = false;
+            this.dgv_contatos.AllowUserToDeleteRows = false;
+            this.dgv_contatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_contatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_contatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.name,
             this.phone,
             this.email});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(303, 197);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_contatos.Location = new System.Drawing.Point(11, 142);
+            this.dgv_contatos.Name = "dgv_contatos";
+            this.dgv_contatos.ReadOnly = true;
+            this.dgv_contatos.RowHeadersVisible = false;
+            this.dgv_contatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_contatos.Size = new System.Drawing.Size(304, 198);
+            this.dgv_contatos.TabIndex = 0;
+            this.dgv_contatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contatos_RowEnter);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // name
             // 
@@ -88,10 +102,11 @@
             // 
             this.txt_contato.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_contato.Location = new System.Drawing.Point(16, 117);
+            this.txt_contato.Location = new System.Drawing.Point(44, 117);
             this.txt_contato.Name = "txt_contato";
-            this.txt_contato.Size = new System.Drawing.Size(298, 20);
+            this.txt_contato.Size = new System.Drawing.Size(270, 20);
             this.txt_contato.TabIndex = 1;
+            this.txt_contato.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_contato_KeyDown);
             // 
             // lbl_contato
             // 
@@ -121,6 +136,7 @@
             this.btn_confirmar.TabIndex = 4;
             this.btn_confirmar.Text = "Confirmar operação";
             this.btn_confirmar.UseVisualStyleBackColor = true;
+            this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
             // 
             // panel1
             // 
@@ -191,20 +207,33 @@
             this.lbl_tipoOperacaoHeader.TabIndex = 0;
             this.lbl_tipoOperacaoHeader.Text = "Tipo de operação:";
             // 
+            // btn_adicionarContato
+            // 
+            this.btn_adicionarContato.BackgroundImage = global::PDV_Xavier.Properties.Resources.user_plus;
+            this.btn_adicionarContato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_adicionarContato.Location = new System.Drawing.Point(16, 116);
+            this.btn_adicionarContato.Name = "btn_adicionarContato";
+            this.btn_adicionarContato.Size = new System.Drawing.Size(22, 20);
+            this.btn_adicionarContato.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btn_adicionarContato, "Adicionar Contato");
+            this.btn_adicionarContato.UseVisualStyleBackColor = true;
+            this.btn_adicionarContato.Click += new System.EventHandler(this.btn_adicionarContato_Click);
+            // 
             // Confirmar_Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 394);
+            this.Controls.Add(this.btn_adicionarContato);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_confirmar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_contato);
             this.Controls.Add(this.txt_contato);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_contatos);
             this.Name = "Confirmar_Pedido";
             this.Text = "Confirmar pedido";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_contatos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -214,10 +243,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridView dgv_contatos;
         private System.Windows.Forms.TextBox txt_contato;
         private System.Windows.Forms.Label lbl_contato;
         private System.Windows.Forms.Label label2;
@@ -229,5 +255,11 @@
         private System.Windows.Forms.Label lbl_tipoPagamento;
         private System.Windows.Forms.Label lbl_valorTotal;
         private System.Windows.Forms.Label lbl_tipoOperacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.Button btn_adicionarContato;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
