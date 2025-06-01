@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.OleDb;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
 using System.Globalization;
 
 namespace PDV_Xavier
@@ -77,13 +70,18 @@ namespace PDV_Xavier
 
         private void recalcularValorTotal()
         {
+
             decimal total = 0;
             foreach (DataGridViewRow row in dgv_produtosSelecionados.Rows)
             {
-                if (row.Cells["valor"].Value != null)
+                try
                 {
-                    total += Convert.ToDecimal(row.Cells["valor"].Value);
+                    if (row.Cells["valor"].Value != null)
+                    {
+                        total += Convert.ToDecimal(row.Cells["valor"].Value);
+                    }
                 }
+                catch{}
             }
             txt_valorFinal.Text = $"{total:C}";
         }
@@ -114,7 +112,7 @@ namespace PDV_Xavier
 
         private void btn_finalizarPedido_Click(object sender, EventArgs e)
         {
-            if(!dgv_produtosSelecionados.Rows.Cast<DataGridViewRow>().Any())
+            if (!dgv_produtosSelecionados.Rows.Cast<DataGridViewRow>().Any())
             {
                 MessageBox.Show("Nenhum produto selecionado para o pedido.");
                 return;

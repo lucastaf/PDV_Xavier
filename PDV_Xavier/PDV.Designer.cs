@@ -94,6 +94,7 @@
             this.dgv_produtosSelecionados.Location = new System.Drawing.Point(416, 72);
             this.dgv_produtosSelecionados.Name = "dgv_produtosSelecionados";
             this.dgv_produtosSelecionados.RowHeadersVisible = false;
+            this.dgv_produtosSelecionados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_produtosSelecionados.Size = new System.Drawing.Size(305, 303);
             this.dgv_produtosSelecionados.TabIndex = 6;
             this.dgv_produtosSelecionados.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_produtosSelecionados_CellEndEdit);

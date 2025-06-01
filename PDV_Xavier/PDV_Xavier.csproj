@@ -196,6 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBEntities.cs" />
+    <Compile Include="Detalhe_operacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detalhe_operacao.Designer.cs">
+      <DependentUpon>Detalhe_operacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="PDV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </Compile>
     <EmbeddedResource Include="Confirmar_Pedido.resx">
       <DependentUpon>Confirmar_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Detalhe_operacao.resx">
+      <DependentUpon>Detalhe_operacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PDV.resx">
       <DependentUpon>PDV.cs</DependentUpon>

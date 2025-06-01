@@ -115,10 +115,13 @@ namespace PDV_Xavier
         private void tab_operacoes_Enter(object sender, EventArgs e)
         {
             var operacoes = db.operacoes.ToList();
-            dgv_operacoes.DataSource = operacoes.Select(o => new
+            dgv_operacoes.DataSource = (
+            from o in db.operacoes
+            join c in db.contatos on o.id_contato equals c.id
+            select new
             {
                 o.id,
-                contato = "CONTATO",
+                contato = c.nome,
                 Valor = $"{o.valor:C}",
                 o.tipo_pagamento,
                 o.tipo_operacao,
@@ -136,7 +139,9 @@ namespace PDV_Xavier
 
         private void dgv_operacoes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("Celula selecionada");
+            int idSelecionado = (int)dgv_operacoes.Rows[e.RowIndex].Cells["id"].Value;
+            Detalhe_operacao detalhe_operacao = new Detalhe_operacao(idSelecionado);
+            detalhe_operacao.ShowDialog();
         }
     }
 }
