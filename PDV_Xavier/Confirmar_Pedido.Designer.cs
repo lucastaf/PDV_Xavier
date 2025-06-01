@@ -65,6 +65,7 @@
             this.phone,
             this.email});
             this.dgv_contatos.Location = new System.Drawing.Point(11, 142);
+            this.dgv_contatos.MultiSelect = false;
             this.dgv_contatos.Name = "dgv_contatos";
             this.dgv_contatos.ReadOnly = true;
             this.dgv_contatos.RowHeadersVisible = false;

@@ -114,6 +114,11 @@ namespace PDV_Xavier
 
         private void btn_finalizarPedido_Click(object sender, EventArgs e)
         {
+            if(!dgv_produtosSelecionados.Rows.Cast<DataGridViewRow>().Any())
+            {
+                MessageBox.Show("Nenhum produto selecionado para o pedido.");
+                return;
+            }
             Registros[] registros = dgv_produtosSelecionados.Rows
                 .Cast<DataGridViewRow>()
                 .Select(row => new Registros
@@ -128,9 +133,8 @@ namespace PDV_Xavier
             valorFinal_string = valorFinal_string.Replace("R$ ", "").Replace(".", "").Replace(",", ".");
             float valor = float.Parse(valorFinal_string, CultureInfo.InvariantCulture.NumberFormat);
             string tipo_pagamento = cmb_tipoPagamento.Text;
-            string tipo_operacao = chk_operacaoCompra.Checked ? "Compra" : "Venda";
 
-            Confirmar_Pedido confirmar_pedido = new Confirmar_Pedido(registros, valor, tipo_pagamento, tipo_operacao);
+            Confirmar_Pedido confirmar_pedido = new Confirmar_Pedido(registros, valor, tipo_pagamento, chk_operacaoCompra.Checked);
             confirmar_pedido.ShowDialog();
         }
     }

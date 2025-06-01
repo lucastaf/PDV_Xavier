@@ -32,6 +32,9 @@
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tab_clientes = new System.Windows.Forms.TabPage();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.chk_isFornecedor = new System.Windows.Forms.CheckBox();
+            this.lbl_isFornecedor = new System.Windows.Forms.Label();
             this.btn_cadastrarCliente = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbl_email = new System.Windows.Forms.Label();
@@ -62,11 +65,11 @@
             this.tab_banco = new System.Windows.Forms.TabPage();
             this.lbl_bdStatus = new System.Windows.Forms.Label();
             this.btn_conectar_banco = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.lbl_isFornecedor = new System.Windows.Forms.Label();
-            this.chk_isFornecedor = new System.Windows.Forms.CheckBox();
+            this.tab_operacoes = new System.Windows.Forms.TabPage();
+            this.dgv_operacoes = new System.Windows.Forms.DataGridView();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -77,7 +80,8 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tab_banco.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.tab_operacoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_operacoes)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_titulo
@@ -91,10 +95,13 @@
             // 
             // tabs
             // 
-            this.tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabs.Controls.Add(this.tab_clientes);
             this.tabs.Controls.Add(this.tab_produtos);
             this.tabs.Controls.Add(this.tab_banco);
+            this.tabs.Controls.Add(this.tab_operacoes);
             this.tabs.Location = new System.Drawing.Point(12, 23);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
@@ -116,6 +123,35 @@
             this.tab_clientes.TabIndex = 0;
             this.tab_clientes.Text = "Contatos";
             this.tab_clientes.UseVisualStyleBackColor = true;
+            // 
+            // panel9
+            // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel9.Controls.Add(this.chk_isFornecedor);
+            this.panel9.Controls.Add(this.lbl_isFornecedor);
+            this.panel9.Location = new System.Drawing.Point(17, 143);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(482, 34);
+            this.panel9.TabIndex = 4;
+            // 
+            // chk_isFornecedor
+            // 
+            this.chk_isFornecedor.AutoSize = true;
+            this.chk_isFornecedor.Location = new System.Drawing.Point(464, 9);
+            this.chk_isFornecedor.Name = "chk_isFornecedor";
+            this.chk_isFornecedor.Size = new System.Drawing.Size(15, 14);
+            this.chk_isFornecedor.TabIndex = 1;
+            this.chk_isFornecedor.UseVisualStyleBackColor = true;
+            // 
+            // lbl_isFornecedor
+            // 
+            this.lbl_isFornecedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_isFornecedor.AutoSize = true;
+            this.lbl_isFornecedor.Location = new System.Drawing.Point(6, 10);
+            this.lbl_isFornecedor.Name = "lbl_isFornecedor";
+            this.lbl_isFornecedor.Size = new System.Drawing.Size(122, 13);
+            this.lbl_isFornecedor.TabIndex = 0;
+            this.lbl_isFornecedor.Text = "Contato é de fornecedor";
             // 
             // btn_cadastrarCliente
             // 
@@ -424,34 +460,36 @@
             this.btn_conectar_banco.UseVisualStyleBackColor = true;
             this.btn_conectar_banco.Click += new System.EventHandler(this.btn_conectar_banco_Click);
             // 
-            // panel9
+            // tab_operacoes
             // 
-            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel9.Controls.Add(this.chk_isFornecedor);
-            this.panel9.Controls.Add(this.lbl_isFornecedor);
-            this.panel9.Location = new System.Drawing.Point(17, 143);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(482, 34);
-            this.panel9.TabIndex = 4;
+            this.tab_operacoes.Controls.Add(this.dgv_operacoes);
+            this.tab_operacoes.Location = new System.Drawing.Point(4, 22);
+            this.tab_operacoes.Name = "tab_operacoes";
+            this.tab_operacoes.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_operacoes.Size = new System.Drawing.Size(517, 291);
+            this.tab_operacoes.TabIndex = 3;
+            this.tab_operacoes.Text = "Operações";
+            this.tab_operacoes.UseVisualStyleBackColor = true;
+            this.tab_operacoes.Enter += new System.EventHandler(this.tab_operacoes_Enter);
             // 
-            // lbl_isFornecedor
+            // dgv_operacoes
             // 
-            this.lbl_isFornecedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_isFornecedor.AutoSize = true;
-            this.lbl_isFornecedor.Location = new System.Drawing.Point(6, 10);
-            this.lbl_isFornecedor.Name = "lbl_isFornecedor";
-            this.lbl_isFornecedor.Size = new System.Drawing.Size(122, 13);
-            this.lbl_isFornecedor.TabIndex = 0;
-            this.lbl_isFornecedor.Text = "Contato é de fornecedor";
-            // 
-            // chk_isFornecedor
-            // 
-            this.chk_isFornecedor.AutoSize = true;
-            this.chk_isFornecedor.Location = new System.Drawing.Point(464, 9);
-            this.chk_isFornecedor.Name = "chk_isFornecedor";
-            this.chk_isFornecedor.Size = new System.Drawing.Size(15, 14);
-            this.chk_isFornecedor.TabIndex = 1;
-            this.chk_isFornecedor.UseVisualStyleBackColor = true;
+            this.dgv_operacoes.AllowUserToAddRows = false;
+            this.dgv_operacoes.AllowUserToDeleteRows = false;
+            this.dgv_operacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_operacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_operacoes.Location = new System.Drawing.Point(7, 7);
+            this.dgv_operacoes.MultiSelect = false;
+            this.dgv_operacoes.Name = "dgv_operacoes";
+            this.dgv_operacoes.ReadOnly = true;
+            this.dgv_operacoes.RowHeadersVisible = false;
+            this.dgv_operacoes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_operacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_operacoes.Size = new System.Drawing.Size(504, 278);
+            this.dgv_operacoes.TabIndex = 0;
+            this.dgv_operacoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_operacoes_CellDoubleClick);
             // 
             // Tela_Gerencial
             // 
@@ -466,6 +504,8 @@
             this.Text = "Tela_Gerencial";
             this.tabs.ResumeLayout(false);
             this.tab_clientes.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -485,8 +525,8 @@
             this.panel1.PerformLayout();
             this.tab_banco.ResumeLayout(false);
             this.tab_banco.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.tab_operacoes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_operacoes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,5 +570,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lbl_isFornecedor;
         private System.Windows.Forms.CheckBox chk_isFornecedor;
+        private System.Windows.Forms.TabPage tab_operacoes;
+        private System.Windows.Forms.DataGridView dgv_operacoes;
     }
 }

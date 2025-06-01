@@ -15,25 +15,27 @@ namespace PDV_Xavier
     {
         private float valor;
         private string tipo_pagamento;
+        private int tipo_operacao_selecionado; // 0 - Venda, 1 - Compra
+
         private string tipo_operacao;
         private int contato_selecionado;
         private Registros[] registros;
         AppDbContext db;
 
 
-        public Confirmar_Pedido(Registros[] registros, float valor, string tipo_pagamento, string tipo_operacao)
+        public Confirmar_Pedido(Registros[] registros, float valor, string tipo_pagamento, bool is_restoque)
         {
             this.valor = valor;
             this.tipo_pagamento = tipo_pagamento;
-            this.tipo_operacao = tipo_operacao;
             this.registros = registros;
-
+            this.tipo_operacao_selecionado = is_restoque ? 1 : 0; // Define o tipo de operação com base na string
 
             InitializeComponent();
 
             lbl_valorTotal.Text = $"{valor:C}";
             lbl_tipoPagamento.Text = tipo_pagamento;
-            lbl_tipoOperacao.Text = tipo_operacao;
+            this.tipo_operacao = tipo_operacao_selecionado == 1 ? "Restoque" : "Venda";
+            lbl_tipoOperacao.Text = this.tipo_operacao;
             try
             {
                 string connectionString = Properties.Settings.Default.CaminhoBanco;
@@ -53,11 +55,12 @@ namespace PDV_Xavier
         {
             if (e.KeyValue == (char)Keys.Enter)
             {
+                dgv_contatos.Rows.Clear(); // Limpa os registros anteriores
                 string termoBusca = txt_contato.Text.ToLower();
 
                 //Consulta ao banco com filtro case -insensitive
                 var contatosFiltrados = db.contatos
-                    .Where(p => p.nome.ToLower().Contains(termoBusca)).Select(p => new
+                    .Where(p => (p.nome.ToLower().Contains(termoBusca) && p.is_fornecedor == this.tipo_operacao_selecionado)).Select(p => new
                     {
                         id = p.id,
                         name = p.nome,

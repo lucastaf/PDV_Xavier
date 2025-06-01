@@ -111,5 +111,32 @@ namespace PDV_Xavier
 
             MessageBox.Show("Cliente cadastrado com sucesso");
         }
+
+        private void tab_operacoes_Enter(object sender, EventArgs e)
+        {
+            var operacoes = db.operacoes.ToList();
+            dgv_operacoes.DataSource = operacoes.Select(o => new
+            {
+                o.id,
+                contato = "CONTATO",
+                Valor = $"{o.valor:C}",
+                o.tipo_pagamento,
+                o.tipo_operacao,
+                o.criado_em,
+            }).ToList();
+            dgv_operacoes.Columns["id"].Visible = false;
+            dgv_operacoes.Columns["contato"].HeaderText = "Contato";
+            dgv_operacoes.Columns["Valor"].HeaderText = "Valor (R$)";
+            dgv_operacoes.Columns["tipo_pagamento"].HeaderText = "Tipo de Pagamento";
+            dgv_operacoes.Columns["tipo_operacao"].HeaderText = "Tipo de Operação";
+            dgv_operacoes.Columns["criado_em"].HeaderText = "Criado em";
+        }
+
+
+
+        private void dgv_operacoes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("Celula selecionada");
+        }
     }
 }

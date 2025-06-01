@@ -33,6 +33,10 @@
             this.txt_productName = new System.Windows.Forms.TextBox();
             this.btn_gerenciar = new System.Windows.Forms.Button();
             this.dgv_produtosSelecionados = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_pesquisar = new System.Windows.Forms.Label();
             this.nud_quantidadeProdutos = new System.Windows.Forms.NumericUpDown();
             this.btn_adicionarProduto = new System.Windows.Forms.Button();
@@ -43,10 +47,6 @@
             this.chk_operacaoCompra = new System.Windows.Forms.CheckBox();
             this.lbl_valorFinal = new System.Windows.Forms.Label();
             this.lbl_tipoPagamento = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtosSelecionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantidadeProdutos)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,29 @@
             this.dgv_produtosSelecionados.Size = new System.Drawing.Size(305, 303);
             this.dgv_produtosSelecionados.TabIndex = 6;
             this.dgv_produtosSelecionados.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_produtosSelecionados_CellEndEdit);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // nome
+            // 
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
             // 
             // lbl_pesquisar
             // 
@@ -181,6 +204,7 @@
             this.cmb_tipoPagamento.Name = "cmb_tipoPagamento";
             this.cmb_tipoPagamento.Size = new System.Drawing.Size(177, 21);
             this.cmb_tipoPagamento.TabIndex = 14;
+            this.cmb_tipoPagamento.Text = "Pix";
             // 
             // chk_operacaoCompra
             // 
@@ -211,29 +235,6 @@
             this.lbl_tipoPagamento.Size = new System.Drawing.Size(99, 13);
             this.lbl_tipoPagamento.TabIndex = 16;
             this.lbl_tipoPagamento.Text = "Tipo de pagamento";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // quantidade
-            // 
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            // 
-            // valor
-            // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
             // 
             // PDV
             // 
