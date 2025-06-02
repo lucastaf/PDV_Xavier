@@ -138,7 +138,7 @@ namespace PDV_Xavier
 
             string valorFinal_string = txt_valorFinal.Text;
             valorFinal_string = valorFinal_string.Replace("R$ ", "").Replace(".", "").Replace(",", ".");
-            float valor = float.Parse(valorFinal_string, CultureInfo.InvariantCulture.NumberFormat);
+            float valor = float.Parse(valorFinal_string, CultureInfo.InvariantCulture.NumberFormat) * (chk_operacaoCompra.Checked ? -1 : 1);
             string tipo_pagamento = cmb_tipoPagamento.Text;
 
             Confirmar_Pedido confirmar_pedido = new Confirmar_Pedido(registros, valor, tipo_pagamento, chk_operacaoCompra.Checked);
