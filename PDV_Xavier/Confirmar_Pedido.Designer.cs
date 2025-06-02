@@ -72,7 +72,6 @@
             this.dgv_contatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_contatos.Size = new System.Drawing.Size(304, 198);
             this.dgv_contatos.TabIndex = 0;
-            this.dgv_contatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_contatos_RowEnter);
             // 
             // id
             // 

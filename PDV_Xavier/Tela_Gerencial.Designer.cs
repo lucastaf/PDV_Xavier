@@ -67,6 +67,10 @@
             this.btn_conectar_banco = new System.Windows.Forms.Button();
             this.tab_operacoes = new System.Windows.Forms.TabPage();
             this.dgv_operacoes = new System.Windows.Forms.DataGridView();
+            this.tab_estoque = new System.Windows.Forms.TabPage();
+            this.dgv_produtos = new System.Windows.Forms.DataGridView();
+            this.tab_lista_contatos = new System.Windows.Forms.TabPage();
+            this.dgv_contatos = new System.Windows.Forms.DataGridView();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -82,6 +86,10 @@
             this.tab_banco.SuspendLayout();
             this.tab_operacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_operacoes)).BeginInit();
+            this.tab_estoque.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_produtos)).BeginInit();
+            this.tab_lista_contatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_contatos)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_titulo
@@ -102,10 +110,12 @@
             this.tabs.Controls.Add(this.tab_produtos);
             this.tabs.Controls.Add(this.tab_banco);
             this.tabs.Controls.Add(this.tab_operacoes);
+            this.tabs.Controls.Add(this.tab_estoque);
+            this.tabs.Controls.Add(this.tab_lista_contatos);
             this.tabs.Location = new System.Drawing.Point(12, 23);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(525, 317);
+            this.tabs.Size = new System.Drawing.Size(594, 371);
             this.tabs.TabIndex = 1;
             // 
             // tab_clientes
@@ -119,7 +129,7 @@
             this.tab_clientes.Location = new System.Drawing.Point(4, 22);
             this.tab_clientes.Name = "tab_clientes";
             this.tab_clientes.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_clientes.Size = new System.Drawing.Size(517, 291);
+            this.tab_clientes.Size = new System.Drawing.Size(586, 345);
             this.tab_clientes.TabIndex = 0;
             this.tab_clientes.Text = "Contatos";
             this.tab_clientes.UseVisualStyleBackColor = true;
@@ -129,15 +139,16 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.chk_isFornecedor);
             this.panel9.Controls.Add(this.lbl_isFornecedor);
-            this.panel9.Location = new System.Drawing.Point(17, 143);
+            this.panel9.Location = new System.Drawing.Point(17, 170);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(482, 34);
+            this.panel9.Size = new System.Drawing.Size(551, 34);
             this.panel9.TabIndex = 4;
             // 
             // chk_isFornecedor
             // 
+            this.chk_isFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chk_isFornecedor.AutoSize = true;
-            this.chk_isFornecedor.Location = new System.Drawing.Point(464, 9);
+            this.chk_isFornecedor.Location = new System.Drawing.Point(533, 9);
             this.chk_isFornecedor.Name = "chk_isFornecedor";
             this.chk_isFornecedor.Size = new System.Drawing.Size(15, 14);
             this.chk_isFornecedor.TabIndex = 1;
@@ -156,9 +167,9 @@
             // btn_cadastrarCliente
             // 
             this.btn_cadastrarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cadastrarCliente.Location = new System.Drawing.Point(390, 250);
+            this.btn_cadastrarCliente.Location = new System.Drawing.Point(390, 277);
             this.btn_cadastrarCliente.Name = "btn_cadastrarCliente";
-            this.btn_cadastrarCliente.Size = new System.Drawing.Size(109, 35);
+            this.btn_cadastrarCliente.Size = new System.Drawing.Size(178, 35);
             this.btn_cadastrarCliente.TabIndex = 11;
             this.btn_cadastrarCliente.Text = "Cadastrar Contatos";
             this.btn_cadastrarCliente.UseVisualStyleBackColor = true;
@@ -169,9 +180,9 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.Controls.Add(this.lbl_email);
             this.panel8.Controls.Add(this.txt_email);
-            this.panel8.Location = new System.Drawing.Point(17, 103);
+            this.panel8.Location = new System.Drawing.Point(17, 130);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(482, 34);
+            this.panel8.Size = new System.Drawing.Size(551, 34);
             this.panel8.TabIndex = 3;
             // 
             // lbl_email
@@ -189,7 +200,7 @@
             this.txt_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_email.Location = new System.Drawing.Point(179, 7);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(300, 20);
+            this.txt_email.Size = new System.Drawing.Size(369, 20);
             this.txt_email.TabIndex = 0;
             // 
             // panel7
@@ -197,9 +208,9 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.Controls.Add(this.mtx_telefone);
             this.panel7.Controls.Add(this.lbl_telefone);
-            this.panel7.Location = new System.Drawing.Point(17, 63);
+            this.panel7.Location = new System.Drawing.Point(17, 90);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(482, 34);
+            this.panel7.Size = new System.Drawing.Size(551, 34);
             this.panel7.TabIndex = 2;
             // 
             // mtx_telefone
@@ -208,7 +219,7 @@
             this.mtx_telefone.Location = new System.Drawing.Point(179, 7);
             this.mtx_telefone.Mask = "(99) 00000-0000";
             this.mtx_telefone.Name = "mtx_telefone";
-            this.mtx_telefone.Size = new System.Drawing.Size(300, 20);
+            this.mtx_telefone.Size = new System.Drawing.Size(369, 20);
             this.mtx_telefone.TabIndex = 1;
             // 
             // lbl_telefone
@@ -226,9 +237,9 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.lbl_nome);
             this.panel6.Controls.Add(this.txt_contato);
-            this.panel6.Location = new System.Drawing.Point(17, 23);
+            this.panel6.Location = new System.Drawing.Point(17, 50);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(482, 34);
+            this.panel6.Size = new System.Drawing.Size(551, 34);
             this.panel6.TabIndex = 1;
             // 
             // lbl_nome
@@ -246,7 +257,7 @@
             this.txt_contato.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_contato.Location = new System.Drawing.Point(179, 7);
             this.txt_contato.Name = "txt_contato";
-            this.txt_contato.Size = new System.Drawing.Size(300, 20);
+            this.txt_contato.Size = new System.Drawing.Size(369, 20);
             this.txt_contato.TabIndex = 0;
             // 
             // tab_produtos
@@ -260,7 +271,7 @@
             this.tab_produtos.Location = new System.Drawing.Point(4, 22);
             this.tab_produtos.Name = "tab_produtos";
             this.tab_produtos.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_produtos.Size = new System.Drawing.Size(517, 291);
+            this.tab_produtos.Size = new System.Drawing.Size(586, 345);
             this.tab_produtos.TabIndex = 1;
             this.tab_produtos.Text = "Produtos";
             this.tab_produtos.UseVisualStyleBackColor = true;
@@ -269,9 +280,9 @@
             // btn_cadastrarProduto
             // 
             this.btn_cadastrarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cadastrarProduto.Location = new System.Drawing.Point(390, 250);
+            this.btn_cadastrarProduto.Location = new System.Drawing.Point(390, 277);
             this.btn_cadastrarProduto.Name = "btn_cadastrarProduto";
-            this.btn_cadastrarProduto.Size = new System.Drawing.Size(109, 35);
+            this.btn_cadastrarProduto.Size = new System.Drawing.Size(178, 35);
             this.btn_cadastrarProduto.TabIndex = 10;
             this.btn_cadastrarProduto.Text = "Cadastrar Produto";
             this.btn_cadastrarProduto.UseVisualStyleBackColor = true;
@@ -282,9 +293,9 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.Controls.Add(this.txt_preco);
             this.panel5.Controls.Add(this.lbl_preco);
-            this.panel5.Location = new System.Drawing.Point(17, 183);
+            this.panel5.Location = new System.Drawing.Point(17, 210);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(482, 34);
+            this.panel5.Size = new System.Drawing.Size(551, 34);
             this.panel5.TabIndex = 9;
             // 
             // txt_preco
@@ -292,7 +303,7 @@
             this.txt_preco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_preco.Location = new System.Drawing.Point(179, 7);
             this.txt_preco.Name = "txt_preco";
-            this.txt_preco.Size = new System.Drawing.Size(300, 20);
+            this.txt_preco.Size = new System.Drawing.Size(369, 20);
             this.txt_preco.TabIndex = 4;
             this.txt_preco.TextChanged += new System.EventHandler(this.txt_preco_TextChanged);
             // 
@@ -311,9 +322,9 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.cmb_tipo);
             this.panel4.Controls.Add(this.lbl_tipo);
-            this.panel4.Location = new System.Drawing.Point(17, 143);
+            this.panel4.Location = new System.Drawing.Point(17, 170);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(482, 34);
+            this.panel4.Size = new System.Drawing.Size(551, 34);
             this.panel4.TabIndex = 3;
             // 
             // cmb_tipo
@@ -326,7 +337,7 @@
             "Kanye West"});
             this.cmb_tipo.Location = new System.Drawing.Point(179, 7);
             this.cmb_tipo.Name = "cmb_tipo";
-            this.cmb_tipo.Size = new System.Drawing.Size(300, 21);
+            this.cmb_tipo.Size = new System.Drawing.Size(369, 21);
             this.cmb_tipo.TabIndex = 3;
             // 
             // lbl_tipo
@@ -344,9 +355,9 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.cmb_marca);
             this.panel3.Controls.Add(this.lbl_marca);
-            this.panel3.Location = new System.Drawing.Point(17, 103);
+            this.panel3.Location = new System.Drawing.Point(17, 130);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(482, 34);
+            this.panel3.Size = new System.Drawing.Size(551, 34);
             this.panel3.TabIndex = 2;
             // 
             // cmb_marca
@@ -359,7 +370,7 @@
             "Kanye West"});
             this.cmb_marca.Location = new System.Drawing.Point(179, 7);
             this.cmb_marca.Name = "cmb_marca";
-            this.cmb_marca.Size = new System.Drawing.Size(300, 21);
+            this.cmb_marca.Size = new System.Drawing.Size(369, 21);
             this.cmb_marca.TabIndex = 1;
             // 
             // lbl_marca
@@ -377,9 +388,9 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.txt_produtos);
             this.panel2.Controls.Add(this.lbl_produto);
-            this.panel2.Location = new System.Drawing.Point(17, 63);
+            this.panel2.Location = new System.Drawing.Point(17, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(482, 34);
+            this.panel2.Size = new System.Drawing.Size(551, 34);
             this.panel2.TabIndex = 1;
             // 
             // txt_produtos
@@ -387,7 +398,7 @@
             this.txt_produtos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_produtos.Location = new System.Drawing.Point(179, 7);
             this.txt_produtos.Name = "txt_produtos";
-            this.txt_produtos.Size = new System.Drawing.Size(300, 20);
+            this.txt_produtos.Size = new System.Drawing.Size(369, 20);
             this.txt_produtos.TabIndex = 1;
             // 
             // lbl_produto
@@ -405,9 +416,9 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.lbl_codigo);
             this.panel1.Controls.Add(this.txt_codigo);
-            this.panel1.Location = new System.Drawing.Point(17, 23);
+            this.panel1.Location = new System.Drawing.Point(17, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(482, 34);
+            this.panel1.Size = new System.Drawing.Size(551, 34);
             this.panel1.TabIndex = 0;
             // 
             // lbl_codigo
@@ -425,7 +436,7 @@
             this.txt_codigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_codigo.Location = new System.Drawing.Point(179, 7);
             this.txt_codigo.Name = "txt_codigo";
-            this.txt_codigo.Size = new System.Drawing.Size(300, 20);
+            this.txt_codigo.Size = new System.Drawing.Size(369, 20);
             this.txt_codigo.TabIndex = 0;
             // 
             // tab_banco
@@ -435,16 +446,17 @@
             this.tab_banco.Location = new System.Drawing.Point(4, 22);
             this.tab_banco.Name = "tab_banco";
             this.tab_banco.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_banco.Size = new System.Drawing.Size(517, 291);
+            this.tab_banco.Size = new System.Drawing.Size(586, 345);
             this.tab_banco.TabIndex = 2;
             this.tab_banco.Text = "Banco";
             this.tab_banco.UseVisualStyleBackColor = true;
             // 
             // lbl_bdStatus
             // 
-            this.lbl_bdStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_bdStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_bdStatus.AutoSize = true;
-            this.lbl_bdStatus.Location = new System.Drawing.Point(150, 39);
+            this.lbl_bdStatus.Location = new System.Drawing.Point(150, 22);
             this.lbl_bdStatus.Name = "lbl_bdStatus";
             this.lbl_bdStatus.Size = new System.Drawing.Size(85, 13);
             this.lbl_bdStatus.TabIndex = 5;
@@ -466,7 +478,7 @@
             this.tab_operacoes.Location = new System.Drawing.Point(4, 22);
             this.tab_operacoes.Name = "tab_operacoes";
             this.tab_operacoes.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_operacoes.Size = new System.Drawing.Size(517, 291);
+            this.tab_operacoes.Size = new System.Drawing.Size(586, 345);
             this.tab_operacoes.TabIndex = 3;
             this.tab_operacoes.Text = "Operações";
             this.tab_operacoes.UseVisualStyleBackColor = true;
@@ -487,16 +499,69 @@
             this.dgv_operacoes.RowHeadersVisible = false;
             this.dgv_operacoes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_operacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_operacoes.Size = new System.Drawing.Size(504, 278);
+            this.dgv_operacoes.Size = new System.Drawing.Size(573, 332);
             this.dgv_operacoes.TabIndex = 0;
             this.dgv_operacoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_operacoes_CellDoubleClick);
+            // 
+            // tab_estoque
+            // 
+            this.tab_estoque.Controls.Add(this.dgv_produtos);
+            this.tab_estoque.Location = new System.Drawing.Point(4, 22);
+            this.tab_estoque.Name = "tab_estoque";
+            this.tab_estoque.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_estoque.Size = new System.Drawing.Size(586, 345);
+            this.tab_estoque.TabIndex = 4;
+            this.tab_estoque.Text = "Estoque";
+            this.tab_estoque.UseVisualStyleBackColor = true;
+            this.tab_estoque.Enter += new System.EventHandler(this.tab_estoque_Enter);
+            // 
+            // dgv_produtos
+            // 
+            this.dgv_produtos.AllowUserToAddRows = false;
+            this.dgv_produtos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_produtos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_produtos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgv_produtos.Location = new System.Drawing.Point(7, 7);
+            this.dgv_produtos.MultiSelect = false;
+            this.dgv_produtos.Name = "dgv_produtos";
+            this.dgv_produtos.RowHeadersVisible = false;
+            this.dgv_produtos.Size = new System.Drawing.Size(573, 332);
+            this.dgv_produtos.TabIndex = 0;
+            this.dgv_produtos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
+            // 
+            // tab_lista_contatos
+            // 
+            this.tab_lista_contatos.Controls.Add(this.dgv_contatos);
+            this.tab_lista_contatos.Location = new System.Drawing.Point(4, 22);
+            this.tab_lista_contatos.Name = "tab_lista_contatos";
+            this.tab_lista_contatos.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_lista_contatos.Size = new System.Drawing.Size(586, 345);
+            this.tab_lista_contatos.TabIndex = 5;
+            this.tab_lista_contatos.Text = "Lista de contatos";
+            this.tab_lista_contatos.UseVisualStyleBackColor = true;
+            this.tab_lista_contatos.Enter += new System.EventHandler(this.tab_lista_contatos_Enter);
+            // 
+            // dgv_contatos
+            // 
+            this.dgv_contatos.AllowUserToAddRows = false;
+            this.dgv_contatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_contatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_contatos.Location = new System.Drawing.Point(6, 6);
+            this.dgv_contatos.Name = "dgv_contatos";
+            this.dgv_contatos.Size = new System.Drawing.Size(574, 333);
+            this.dgv_contatos.TabIndex = 0;
+            this.dgv_contatos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
             // 
             // Tela_Gerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(549, 352);
+            this.ClientSize = new System.Drawing.Size(618, 406);
             this.Controls.Add(this.tabs);
             this.Controls.Add(this.lbl_titulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -527,6 +592,10 @@
             this.tab_banco.PerformLayout();
             this.tab_operacoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_operacoes)).EndInit();
+            this.tab_estoque.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_produtos)).EndInit();
+            this.tab_lista_contatos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_contatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -572,5 +641,9 @@
         private System.Windows.Forms.CheckBox chk_isFornecedor;
         private System.Windows.Forms.TabPage tab_operacoes;
         private System.Windows.Forms.DataGridView dgv_operacoes;
+        private System.Windows.Forms.TabPage tab_estoque;
+        private System.Windows.Forms.DataGridView dgv_produtos;
+        private System.Windows.Forms.TabPage tab_lista_contatos;
+        private System.Windows.Forms.DataGridView dgv_contatos;
     }
 }

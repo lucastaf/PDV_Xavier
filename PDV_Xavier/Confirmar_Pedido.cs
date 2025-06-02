@@ -18,7 +18,6 @@ namespace PDV_Xavier
         private int tipo_operacao_selecionado; // 0 - Venda, 1 - Compra
 
         private string tipo_operacao;
-        private int contato_selecionado;
         private Registros[] registros;
         AppDbContext db;
 
@@ -79,6 +78,7 @@ namespace PDV_Xavier
 
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
+            int contato_selecionado = Convert.ToInt32(dgv_contatos.SelectedRows[0].Cells["id"].Value);
             var novaOperacao = db.operacoes.Add(new Operacoes
             {
                 id_contato = contato_selecionado,
@@ -99,19 +99,10 @@ namespace PDV_Xavier
                 });
             }
             db.SaveChanges();
+            db.atualizarEstoque(this.registros);
             MessageBox.Show("Pedido confirmado com sucesso!");
             this.Close();
         }
-
-        private void dgv_contatos_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgv_contatos.SelectedRows.Count > 0)
-            {
-
-                this.contato_selecionado = Convert.ToInt32(dgv_contatos.SelectedRows[0].Cells["id"].Value);
-            }
-        }
-
         private void btn_adicionarContato_Click(object sender, EventArgs e)
         {
             var menuGerencial = new Tela_Gerencial();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -114,7 +115,6 @@ namespace PDV_Xavier
 
         private void tab_operacoes_Enter(object sender, EventArgs e)
         {
-            var operacoes = db.operacoes.ToList();
             dgv_operacoes.DataSource = (
             from o in db.operacoes
             join c in db.contatos on o.id_contato equals c.id
@@ -142,6 +142,33 @@ namespace PDV_Xavier
             int idSelecionado = (int)dgv_operacoes.Rows[e.RowIndex].Cells["id"].Value;
             Detalhe_operacao detalhe_operacao = new Detalhe_operacao(idSelecionado);
             detalhe_operacao.ShowDialog();
+        }
+
+        private void tab_estoque_Enter(object sender, EventArgs e)
+        {
+            db.produtos.Load();
+            dgv_produtos.DataSource = db.produtos.Local.ToBindingList();
+            dgv_produtos.Columns["id"].Visible = false; // Oculta a coluna de ID
+            dgv_produtos.Columns["preco"].DefaultCellStyle.Format = "C2"; // Formato moeda
+        }
+
+        private void refresh_database(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                db.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao salvar as alterações no produto.");
+            }
+        }
+
+        private void tab_lista_contatos_Enter(object sender, EventArgs e)
+        {
+            db.contatos.Load();
+            dgv_contatos.DataSource = db.contatos.Local.ToBindingList();
+            dgv_contatos.Columns["id"].Visible = false; // Oculta a coluna de ID
         }
     }
 }

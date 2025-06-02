@@ -81,7 +81,7 @@ namespace PDV_Xavier
                         total += Convert.ToDecimal(row.Cells["valor"].Value);
                     }
                 }
-                catch{}
+                catch { }
             }
             txt_valorFinal.Text = $"{total:C}";
         }
@@ -122,10 +122,19 @@ namespace PDV_Xavier
                 .Select(row => new Registros
                 {
                     id_produto = (int)row.Cells["Id"].Value,
-                    valor = Convert.ToSingle(row.Cells["valor"].Value),
-                    quantidade = (int)row.Cells["quantidade"].Value,
+                    valor = Convert.ToSingle(row.Cells["valor"].Value) * (chk_operacaoCompra.Checked ? -1 : 1),
+                    quantidade = Convert.ToInt32(row.Cells["quantidade"].Value) * (chk_operacaoCompra.Checked ? 1 : -1),
                 })
                 .ToArray();
+
+            if (chk_operacaoCompra.Checked == false)
+            {
+                string estoque = db.checkEstoque(registros);
+                if (!string.IsNullOrEmpty(estoque))
+                {
+                    MessageBox.Show(estoque, "Estoque Insuficiente, cuidado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
 
             string valorFinal_string = txt_valorFinal.Text;
             valorFinal_string = valorFinal_string.Replace("R$ ", "").Replace(".", "").Replace(",", ".");
