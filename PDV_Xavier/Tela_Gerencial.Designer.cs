@@ -69,11 +69,11 @@
             this.lbl_bdStatus = new System.Windows.Forms.Label();
             this.btn_conectar_banco = new System.Windows.Forms.Button();
             this.tab_operacoes = new System.Windows.Forms.TabPage();
-            this.tabela_operacoes = new PDV_Xavier.TabelaOperacoes();
             this.tab_estoque = new System.Windows.Forms.TabPage();
             this.dgv_produtos = new System.Windows.Forms.DataGridView();
             this.tab_lista_contatos = new System.Windows.Forms.TabPage();
             this.dgv_contatos = new System.Windows.Forms.DataGridView();
+            this.tabela_operacoes = new PDV_Xavier.TabelaOperacoes();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -108,7 +108,7 @@
             this.tabs.Location = new System.Drawing.Point(12, 12);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(594, 382);
+            this.tabs.Size = new System.Drawing.Size(705, 382);
             this.tabs.TabIndex = 1;
             // 
             // tab_clientes
@@ -122,7 +122,7 @@
             this.tab_clientes.Location = new System.Drawing.Point(4, 22);
             this.tab_clientes.Name = "tab_clientes";
             this.tab_clientes.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_clientes.Size = new System.Drawing.Size(586, 356);
+            this.tab_clientes.Size = new System.Drawing.Size(697, 356);
             this.tab_clientes.TabIndex = 0;
             this.tab_clientes.Text = "Contatos";
             this.tab_clientes.UseVisualStyleBackColor = true;
@@ -264,7 +264,7 @@
             this.tab_produtos.Location = new System.Drawing.Point(4, 22);
             this.tab_produtos.Name = "tab_produtos";
             this.tab_produtos.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_produtos.Size = new System.Drawing.Size(586, 356);
+            this.tab_produtos.Size = new System.Drawing.Size(697, 356);
             this.tab_produtos.TabIndex = 1;
             this.tab_produtos.Text = "Produtos";
             this.tab_produtos.UseVisualStyleBackColor = true;
@@ -443,14 +443,15 @@
             this.tab_banco.Location = new System.Drawing.Point(4, 22);
             this.tab_banco.Name = "tab_banco";
             this.tab_banco.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_banco.Size = new System.Drawing.Size(586, 356);
+            this.tab_banco.Size = new System.Drawing.Size(697, 356);
             this.tab_banco.TabIndex = 2;
             this.tab_banco.Text = "Banco";
             this.tab_banco.UseVisualStyleBackColor = true;
             // 
             // txt_valorEmCaixa
             // 
-            this.txt_valorEmCaixa.Location = new System.Drawing.Point(368, 319);
+            this.txt_valorEmCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_valorEmCaixa.Location = new System.Drawing.Point(479, 330);
             this.txt_valorEmCaixa.Name = "txt_valorEmCaixa";
             this.txt_valorEmCaixa.ReadOnly = true;
             this.txt_valorEmCaixa.Size = new System.Drawing.Size(212, 20);
@@ -458,10 +459,9 @@
             // 
             // lbl_valorEmCaixa
             // 
-            this.lbl_valorEmCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_valorEmCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_valorEmCaixa.AutoSize = true;
-            this.lbl_valorEmCaixa.Location = new System.Drawing.Point(283, 322);
+            this.lbl_valorEmCaixa.Location = new System.Drawing.Point(394, 333);
             this.lbl_valorEmCaixa.Name = "lbl_valorEmCaixa";
             this.lbl_valorEmCaixa.Size = new System.Drawing.Size(79, 13);
             this.lbl_valorEmCaixa.TabIndex = 8;
@@ -515,18 +515,11 @@
             this.tab_operacoes.Location = new System.Drawing.Point(4, 22);
             this.tab_operacoes.Name = "tab_operacoes";
             this.tab_operacoes.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_operacoes.Size = new System.Drawing.Size(586, 356);
+            this.tab_operacoes.Size = new System.Drawing.Size(697, 356);
             this.tab_operacoes.TabIndex = 3;
             this.tab_operacoes.Text = "Operações";
             this.tab_operacoes.UseVisualStyleBackColor = true;
             this.tab_operacoes.Enter += new System.EventHandler(this.tab_operacoes_Enter);
-            // 
-            // tabela_operacoes
-            // 
-            this.tabela_operacoes.Location = new System.Drawing.Point(6, 6);
-            this.tabela_operacoes.Name = "tabela_operacoes";
-            this.tabela_operacoes.Size = new System.Drawing.Size(574, 344);
-            this.tabela_operacoes.TabIndex = 0;
             // 
             // tab_estoque
             // 
@@ -534,7 +527,7 @@
             this.tab_estoque.Location = new System.Drawing.Point(4, 22);
             this.tab_estoque.Name = "tab_estoque";
             this.tab_estoque.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_estoque.Size = new System.Drawing.Size(586, 356);
+            this.tab_estoque.Size = new System.Drawing.Size(697, 356);
             this.tab_estoque.TabIndex = 4;
             this.tab_estoque.Text = "Estoque";
             this.tab_estoque.UseVisualStyleBackColor = true;
@@ -552,7 +545,7 @@
             this.dgv_produtos.MultiSelect = false;
             this.dgv_produtos.Name = "dgv_produtos";
             this.dgv_produtos.RowHeadersVisible = false;
-            this.dgv_produtos.Size = new System.Drawing.Size(573, 332);
+            this.dgv_produtos.Size = new System.Drawing.Size(684, 332);
             this.dgv_produtos.TabIndex = 0;
             this.dgv_produtos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
             // 
@@ -562,7 +555,7 @@
             this.tab_lista_contatos.Location = new System.Drawing.Point(4, 22);
             this.tab_lista_contatos.Name = "tab_lista_contatos";
             this.tab_lista_contatos.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_lista_contatos.Size = new System.Drawing.Size(586, 356);
+            this.tab_lista_contatos.Size = new System.Drawing.Size(697, 356);
             this.tab_lista_contatos.TabIndex = 5;
             this.tab_lista_contatos.Text = "Lista de contatos";
             this.tab_lista_contatos.UseVisualStyleBackColor = true;
@@ -581,12 +574,22 @@
             this.dgv_contatos.TabIndex = 0;
             this.dgv_contatos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
             // 
+            // tabela_operacoes
+            // 
+            this.tabela_operacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabela_operacoes.Location = new System.Drawing.Point(6, 6);
+            this.tabela_operacoes.Name = "tabela_operacoes";
+            this.tabela_operacoes.Size = new System.Drawing.Size(685, 344);
+            this.tabela_operacoes.TabIndex = 0;
+            // 
             // Tela_Gerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(618, 406);
+            this.ClientSize = new System.Drawing.Size(729, 406);
             this.Controls.Add(this.tabs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tela_Gerencial";

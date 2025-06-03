@@ -271,6 +271,7 @@
   <ItemGroup>
     <None Include="Resources\the-cannabis-leaf-image-3d-rendering-png.png" />
     <None Include="Resources\user-plus.png" />
+    <None Include="Resources\search.png" />
     <Content Include="the-cannabis-leaf-image-3d-rendering-png.ico" />
   </ItemGroup>
   <ItemGroup>

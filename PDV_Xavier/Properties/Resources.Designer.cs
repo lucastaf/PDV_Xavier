@@ -63,6 +63,16 @@ namespace PDV_Xavier.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap the_cannabis_leaf_image_3d_rendering_png {
             get {
                 object obj = ResourceManager.GetObject("the-cannabis-leaf-image-3d-rendering-png", resourceCulture);
