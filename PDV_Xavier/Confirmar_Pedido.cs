@@ -101,6 +101,10 @@ namespace PDV_Xavier
             db.SaveChanges();
             db.atualizarEstoque(this.registros);
             MessageBox.Show("Pedido confirmado com sucesso!");
+
+            JsonConector jsonConector = JsonConector.getInstance();
+            jsonConector.ValorEmCaixa += (decimal)this.valor;
+
             this.Close();
         }
         private void btn_adicionarContato_Click(object sender, EventArgs e)

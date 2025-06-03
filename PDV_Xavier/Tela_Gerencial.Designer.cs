@@ -63,6 +63,8 @@
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.tab_banco = new System.Windows.Forms.TabPage();
+            this.lbl_jsonConfig = new System.Windows.Forms.Label();
+            this.btn_conectarJson = new System.Windows.Forms.Button();
             this.lbl_bdStatus = new System.Windows.Forms.Label();
             this.btn_conectar_banco = new System.Windows.Forms.Button();
             this.tab_operacoes = new System.Windows.Forms.TabPage();
@@ -71,6 +73,8 @@
             this.dgv_produtos = new System.Windows.Forms.DataGridView();
             this.tab_lista_contatos = new System.Windows.Forms.TabPage();
             this.dgv_contatos = new System.Windows.Forms.DataGridView();
+            this.lbl_valorEmCaixa = new System.Windows.Forms.Label();
+            this.txt_valorEmCaixa = new System.Windows.Forms.TextBox();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -441,6 +445,10 @@
             // 
             // tab_banco
             // 
+            this.tab_banco.Controls.Add(this.txt_valorEmCaixa);
+            this.tab_banco.Controls.Add(this.lbl_valorEmCaixa);
+            this.tab_banco.Controls.Add(this.lbl_jsonConfig);
+            this.tab_banco.Controls.Add(this.btn_conectarJson);
             this.tab_banco.Controls.Add(this.lbl_bdStatus);
             this.tab_banco.Controls.Add(this.btn_conectar_banco);
             this.tab_banco.Location = new System.Drawing.Point(4, 22);
@@ -451,12 +459,33 @@
             this.tab_banco.Text = "Banco";
             this.tab_banco.UseVisualStyleBackColor = true;
             // 
+            // lbl_jsonConfig
+            // 
+            this.lbl_jsonConfig.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_jsonConfig.AutoSize = true;
+            this.lbl_jsonConfig.Location = new System.Drawing.Point(150, 109);
+            this.lbl_jsonConfig.Name = "lbl_jsonConfig";
+            this.lbl_jsonConfig.Size = new System.Drawing.Size(77, 13);
+            this.lbl_jsonConfig.TabIndex = 7;
+            this.lbl_jsonConfig.Text = "Status do Json";
+            // 
+            // btn_conectarJson
+            // 
+            this.btn_conectarJson.Location = new System.Drawing.Point(6, 92);
+            this.btn_conectarJson.Name = "btn_conectarJson";
+            this.btn_conectarJson.Size = new System.Drawing.Size(138, 46);
+            this.btn_conectarJson.TabIndex = 6;
+            this.btn_conectarJson.Text = "Conectar Json";
+            this.btn_conectarJson.UseVisualStyleBackColor = true;
+            this.btn_conectarJson.Click += new System.EventHandler(this.btn_conectarJson_Click);
+            // 
             // lbl_bdStatus
             // 
             this.lbl_bdStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_bdStatus.AutoSize = true;
-            this.lbl_bdStatus.Location = new System.Drawing.Point(150, 22);
+            this.lbl_bdStatus.Location = new System.Drawing.Point(150, 39);
             this.lbl_bdStatus.Name = "lbl_bdStatus";
             this.lbl_bdStatus.Size = new System.Drawing.Size(85, 13);
             this.lbl_bdStatus.TabIndex = 5;
@@ -556,6 +585,25 @@
             this.dgv_contatos.TabIndex = 0;
             this.dgv_contatos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
             // 
+            // lbl_valorEmCaixa
+            // 
+            this.lbl_valorEmCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_valorEmCaixa.AutoSize = true;
+            this.lbl_valorEmCaixa.Location = new System.Drawing.Point(283, 322);
+            this.lbl_valorEmCaixa.Name = "lbl_valorEmCaixa";
+            this.lbl_valorEmCaixa.Size = new System.Drawing.Size(79, 13);
+            this.lbl_valorEmCaixa.TabIndex = 8;
+            this.lbl_valorEmCaixa.Text = "Valor em caixa:";
+            // 
+            // txt_valorEmCaixa
+            // 
+            this.txt_valorEmCaixa.Location = new System.Drawing.Point(368, 319);
+            this.txt_valorEmCaixa.Name = "txt_valorEmCaixa";
+            this.txt_valorEmCaixa.ReadOnly = true;
+            this.txt_valorEmCaixa.Size = new System.Drawing.Size(212, 20);
+            this.txt_valorEmCaixa.TabIndex = 9;
+            // 
             // Tela_Gerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,5 +693,9 @@
         private System.Windows.Forms.DataGridView dgv_produtos;
         private System.Windows.Forms.TabPage tab_lista_contatos;
         private System.Windows.Forms.DataGridView dgv_contatos;
+        private System.Windows.Forms.Label lbl_jsonConfig;
+        private System.Windows.Forms.Button btn_conectarJson;
+        private System.Windows.Forms.TextBox txt_valorEmCaixa;
+        private System.Windows.Forms.Label lbl_valorEmCaixa;
     }
 }

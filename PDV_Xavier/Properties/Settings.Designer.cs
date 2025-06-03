@@ -34,5 +34,17 @@ namespace PDV_Xavier.Properties {
                 this["CaminhoBanco"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CaminhoJson {
+            get {
+                return ((string)(this["CaminhoJson"]));
+            }
+            set {
+                this["CaminhoJson"] = value;
+            }
+        }
     }
 }

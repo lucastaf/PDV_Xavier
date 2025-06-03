@@ -26,6 +26,10 @@ namespace PDV_Xavier
                     db.Database.EnsureCreated();
                     lbl_bdStatus.Text = "Conexão com banco estabelecida";
                 }
+                if(JsonConector.getInstance().isConected)
+                {
+                    txt_valorEmCaixa.Text = $"{JsonConector.getInstance().ValorEmCaixa:C}";
+                }
             }
             catch
             {
@@ -54,6 +58,27 @@ namespace PDV_Xavier
                 catch
                 {
                     MessageBox.Show("Erro ao se conectar ao banco");
+                }
+            }
+        }
+
+        private void btn_conectarJson_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            dialog.Title = "Selecione o arquivo JSON de configuração";
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string caminhoJson = dialog.FileName;
+                    JsonConector conector = JsonConector.getInstance();
+                    conector.setConnectionPath(caminhoJson);
+                    MessageBox.Show("Arquivo JSON conectado com sucesso, valor em caixa: " + conector.ValorEmCaixa);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao se conectar ao arquivo JSON: {ex.Message}");
                 }
             }
         }
@@ -170,5 +195,7 @@ namespace PDV_Xavier
             dgv_contatos.DataSource = db.contatos.Local.ToBindingList();
             dgv_contatos.Columns["id"].Visible = false; // Oculta a coluna de ID
         }
+
+
     }
 }

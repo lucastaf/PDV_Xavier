@@ -202,6 +202,7 @@
     <Compile Include="Detalhe_operacao.Designer.cs">
       <DependentUpon>Detalhe_operacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsonConector.cs" />
     <Compile Include="PDV.cs">
       <SubType>Form</SubType>
     </Compile>
