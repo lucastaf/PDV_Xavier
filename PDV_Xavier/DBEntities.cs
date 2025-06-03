@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -50,7 +51,7 @@ namespace PDV_Xavier
                 var produto = produtos.Find(registro.Key);
                 if (produto != null)
                 {
-                    if (produto.em_estoque < registro.Value)
+                    if (produto.em_estoque < Math.Abs(registro.Value))
                     {
                         estoque += $"Produto {produto.nome} ({produto.codigo}) não tem estoque suficiente no registro.\n";
                     }

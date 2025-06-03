@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tela_Gerencial));
-            this.lbl_titulo = new System.Windows.Forms.Label();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tab_clientes = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -63,18 +62,18 @@
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.tab_banco = new System.Windows.Forms.TabPage();
+            this.txt_valorEmCaixa = new System.Windows.Forms.TextBox();
+            this.lbl_valorEmCaixa = new System.Windows.Forms.Label();
             this.lbl_jsonConfig = new System.Windows.Forms.Label();
             this.btn_conectarJson = new System.Windows.Forms.Button();
             this.lbl_bdStatus = new System.Windows.Forms.Label();
             this.btn_conectar_banco = new System.Windows.Forms.Button();
             this.tab_operacoes = new System.Windows.Forms.TabPage();
-            this.dgv_operacoes = new System.Windows.Forms.DataGridView();
+            this.tabela_operacoes = new PDV_Xavier.TabelaOperacoes();
             this.tab_estoque = new System.Windows.Forms.TabPage();
             this.dgv_produtos = new System.Windows.Forms.DataGridView();
             this.tab_lista_contatos = new System.Windows.Forms.TabPage();
             this.dgv_contatos = new System.Windows.Forms.DataGridView();
-            this.lbl_valorEmCaixa = new System.Windows.Forms.Label();
-            this.txt_valorEmCaixa = new System.Windows.Forms.TextBox();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -89,21 +88,11 @@
             this.panel1.SuspendLayout();
             this.tab_banco.SuspendLayout();
             this.tab_operacoes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_operacoes)).BeginInit();
             this.tab_estoque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtos)).BeginInit();
             this.tab_lista_contatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contatos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbl_titulo
-            // 
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Location = new System.Drawing.Point(248, 9);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(82, 13);
-            this.lbl_titulo.TabIndex = 0;
-            this.lbl_titulo.Text = "Menu Gerencial";
             // 
             // tabs
             // 
@@ -116,10 +105,10 @@
             this.tabs.Controls.Add(this.tab_operacoes);
             this.tabs.Controls.Add(this.tab_estoque);
             this.tabs.Controls.Add(this.tab_lista_contatos);
-            this.tabs.Location = new System.Drawing.Point(12, 23);
+            this.tabs.Location = new System.Drawing.Point(12, 12);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(594, 371);
+            this.tabs.Size = new System.Drawing.Size(594, 382);
             this.tabs.TabIndex = 1;
             // 
             // tab_clientes
@@ -133,7 +122,7 @@
             this.tab_clientes.Location = new System.Drawing.Point(4, 22);
             this.tab_clientes.Name = "tab_clientes";
             this.tab_clientes.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_clientes.Size = new System.Drawing.Size(586, 345);
+            this.tab_clientes.Size = new System.Drawing.Size(586, 356);
             this.tab_clientes.TabIndex = 0;
             this.tab_clientes.Text = "Contatos";
             this.tab_clientes.UseVisualStyleBackColor = true;
@@ -143,7 +132,7 @@
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.Controls.Add(this.chk_isFornecedor);
             this.panel9.Controls.Add(this.lbl_isFornecedor);
-            this.panel9.Location = new System.Drawing.Point(17, 170);
+            this.panel9.Location = new System.Drawing.Point(17, 176);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(551, 34);
             this.panel9.TabIndex = 4;
@@ -171,7 +160,7 @@
             // btn_cadastrarCliente
             // 
             this.btn_cadastrarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cadastrarCliente.Location = new System.Drawing.Point(390, 277);
+            this.btn_cadastrarCliente.Location = new System.Drawing.Point(390, 283);
             this.btn_cadastrarCliente.Name = "btn_cadastrarCliente";
             this.btn_cadastrarCliente.Size = new System.Drawing.Size(178, 35);
             this.btn_cadastrarCliente.TabIndex = 11;
@@ -184,7 +173,7 @@
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.Controls.Add(this.lbl_email);
             this.panel8.Controls.Add(this.txt_email);
-            this.panel8.Location = new System.Drawing.Point(17, 130);
+            this.panel8.Location = new System.Drawing.Point(17, 136);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(551, 34);
             this.panel8.TabIndex = 3;
@@ -212,7 +201,7 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.Controls.Add(this.mtx_telefone);
             this.panel7.Controls.Add(this.lbl_telefone);
-            this.panel7.Location = new System.Drawing.Point(17, 90);
+            this.panel7.Location = new System.Drawing.Point(17, 96);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(551, 34);
             this.panel7.TabIndex = 2;
@@ -241,7 +230,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.lbl_nome);
             this.panel6.Controls.Add(this.txt_contato);
-            this.panel6.Location = new System.Drawing.Point(17, 50);
+            this.panel6.Location = new System.Drawing.Point(17, 56);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(551, 34);
             this.panel6.TabIndex = 1;
@@ -275,7 +264,7 @@
             this.tab_produtos.Location = new System.Drawing.Point(4, 22);
             this.tab_produtos.Name = "tab_produtos";
             this.tab_produtos.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_produtos.Size = new System.Drawing.Size(586, 345);
+            this.tab_produtos.Size = new System.Drawing.Size(586, 356);
             this.tab_produtos.TabIndex = 1;
             this.tab_produtos.Text = "Produtos";
             this.tab_produtos.UseVisualStyleBackColor = true;
@@ -454,10 +443,29 @@
             this.tab_banco.Location = new System.Drawing.Point(4, 22);
             this.tab_banco.Name = "tab_banco";
             this.tab_banco.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_banco.Size = new System.Drawing.Size(586, 345);
+            this.tab_banco.Size = new System.Drawing.Size(586, 356);
             this.tab_banco.TabIndex = 2;
             this.tab_banco.Text = "Banco";
             this.tab_banco.UseVisualStyleBackColor = true;
+            // 
+            // txt_valorEmCaixa
+            // 
+            this.txt_valorEmCaixa.Location = new System.Drawing.Point(368, 319);
+            this.txt_valorEmCaixa.Name = "txt_valorEmCaixa";
+            this.txt_valorEmCaixa.ReadOnly = true;
+            this.txt_valorEmCaixa.Size = new System.Drawing.Size(212, 20);
+            this.txt_valorEmCaixa.TabIndex = 9;
+            // 
+            // lbl_valorEmCaixa
+            // 
+            this.lbl_valorEmCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_valorEmCaixa.AutoSize = true;
+            this.lbl_valorEmCaixa.Location = new System.Drawing.Point(283, 322);
+            this.lbl_valorEmCaixa.Name = "lbl_valorEmCaixa";
+            this.lbl_valorEmCaixa.Size = new System.Drawing.Size(79, 13);
+            this.lbl_valorEmCaixa.TabIndex = 8;
+            this.lbl_valorEmCaixa.Text = "Valor em caixa:";
             // 
             // lbl_jsonConfig
             // 
@@ -503,34 +511,22 @@
             // 
             // tab_operacoes
             // 
-            this.tab_operacoes.Controls.Add(this.dgv_operacoes);
+            this.tab_operacoes.Controls.Add(this.tabela_operacoes);
             this.tab_operacoes.Location = new System.Drawing.Point(4, 22);
             this.tab_operacoes.Name = "tab_operacoes";
             this.tab_operacoes.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_operacoes.Size = new System.Drawing.Size(586, 345);
+            this.tab_operacoes.Size = new System.Drawing.Size(586, 356);
             this.tab_operacoes.TabIndex = 3;
             this.tab_operacoes.Text = "Operações";
             this.tab_operacoes.UseVisualStyleBackColor = true;
             this.tab_operacoes.Enter += new System.EventHandler(this.tab_operacoes_Enter);
             // 
-            // dgv_operacoes
+            // tabela_operacoes
             // 
-            this.dgv_operacoes.AllowUserToAddRows = false;
-            this.dgv_operacoes.AllowUserToDeleteRows = false;
-            this.dgv_operacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_operacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_operacoes.Location = new System.Drawing.Point(7, 7);
-            this.dgv_operacoes.MultiSelect = false;
-            this.dgv_operacoes.Name = "dgv_operacoes";
-            this.dgv_operacoes.ReadOnly = true;
-            this.dgv_operacoes.RowHeadersVisible = false;
-            this.dgv_operacoes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_operacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_operacoes.Size = new System.Drawing.Size(573, 332);
-            this.dgv_operacoes.TabIndex = 0;
-            this.dgv_operacoes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_operacoes_CellDoubleClick);
+            this.tabela_operacoes.Location = new System.Drawing.Point(6, 6);
+            this.tabela_operacoes.Name = "tabela_operacoes";
+            this.tabela_operacoes.Size = new System.Drawing.Size(574, 344);
+            this.tabela_operacoes.TabIndex = 0;
             // 
             // tab_estoque
             // 
@@ -538,7 +534,7 @@
             this.tab_estoque.Location = new System.Drawing.Point(4, 22);
             this.tab_estoque.Name = "tab_estoque";
             this.tab_estoque.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_estoque.Size = new System.Drawing.Size(586, 345);
+            this.tab_estoque.Size = new System.Drawing.Size(586, 356);
             this.tab_estoque.TabIndex = 4;
             this.tab_estoque.Text = "Estoque";
             this.tab_estoque.UseVisualStyleBackColor = true;
@@ -566,7 +562,7 @@
             this.tab_lista_contatos.Location = new System.Drawing.Point(4, 22);
             this.tab_lista_contatos.Name = "tab_lista_contatos";
             this.tab_lista_contatos.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_lista_contatos.Size = new System.Drawing.Size(586, 345);
+            this.tab_lista_contatos.Size = new System.Drawing.Size(586, 356);
             this.tab_lista_contatos.TabIndex = 5;
             this.tab_lista_contatos.Text = "Lista de contatos";
             this.tab_lista_contatos.UseVisualStyleBackColor = true;
@@ -585,25 +581,6 @@
             this.dgv_contatos.TabIndex = 0;
             this.dgv_contatos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
             // 
-            // lbl_valorEmCaixa
-            // 
-            this.lbl_valorEmCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_valorEmCaixa.AutoSize = true;
-            this.lbl_valorEmCaixa.Location = new System.Drawing.Point(283, 322);
-            this.lbl_valorEmCaixa.Name = "lbl_valorEmCaixa";
-            this.lbl_valorEmCaixa.Size = new System.Drawing.Size(79, 13);
-            this.lbl_valorEmCaixa.TabIndex = 8;
-            this.lbl_valorEmCaixa.Text = "Valor em caixa:";
-            // 
-            // txt_valorEmCaixa
-            // 
-            this.txt_valorEmCaixa.Location = new System.Drawing.Point(368, 319);
-            this.txt_valorEmCaixa.Name = "txt_valorEmCaixa";
-            this.txt_valorEmCaixa.ReadOnly = true;
-            this.txt_valorEmCaixa.Size = new System.Drawing.Size(212, 20);
-            this.txt_valorEmCaixa.TabIndex = 9;
-            // 
             // Tela_Gerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -611,7 +588,6 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(618, 406);
             this.Controls.Add(this.tabs);
-            this.Controls.Add(this.lbl_titulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Tela_Gerencial";
             this.Text = "Tela_Gerencial";
@@ -639,19 +615,15 @@
             this.tab_banco.ResumeLayout(false);
             this.tab_banco.PerformLayout();
             this.tab_operacoes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_operacoes)).EndInit();
             this.tab_estoque.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtos)).EndInit();
             this.tab_lista_contatos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contatos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.TabControl tabs;
         private System.Windows.Forms.TabPage tab_clientes;
         private System.Windows.Forms.TabPage tab_produtos;
@@ -688,7 +660,6 @@
         private System.Windows.Forms.Label lbl_isFornecedor;
         private System.Windows.Forms.CheckBox chk_isFornecedor;
         private System.Windows.Forms.TabPage tab_operacoes;
-        private System.Windows.Forms.DataGridView dgv_operacoes;
         private System.Windows.Forms.TabPage tab_estoque;
         private System.Windows.Forms.DataGridView dgv_produtos;
         private System.Windows.Forms.TabPage tab_lista_contatos;
@@ -697,5 +668,6 @@
         private System.Windows.Forms.Button btn_conectarJson;
         private System.Windows.Forms.TextBox txt_valorEmCaixa;
         private System.Windows.Forms.Label lbl_valorEmCaixa;
+        private TabelaOperacoes tabela_operacoes;
     }
 }

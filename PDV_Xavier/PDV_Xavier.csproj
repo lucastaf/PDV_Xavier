@@ -217,6 +217,12 @@
     <Compile Include="Confirmar_Pedido.Designer.cs">
       <DependentUpon>Confirmar_Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="TabelaOperacoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabelaOperacoes.Designer.cs">
+      <DependentUpon>TabelaOperacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Gerencial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TabelaOperacoes.resx">
+      <DependentUpon>TabelaOperacoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tela_Gerencial.resx">
       <DependentUpon>Tela_Gerencial.cs</DependentUpon>
     </EmbeddedResource>
