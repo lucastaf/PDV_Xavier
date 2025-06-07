@@ -42,7 +42,7 @@ namespace PDV_Xavier
 
                 // Consulta ao banco com filtro case-insensitive
                 var produtosFiltrados = db.produtos
-                    .Where(p => p.nome.ToLower().Contains(termoBusca))
+                    .Where(p => p.nome.ToLower().Contains(termoBusca) || p.codigo.Equals(termoBusca))
                     .Select(p => new
                     {
                         Produto = p,
@@ -145,8 +145,19 @@ namespace PDV_Xavier
             float valor = float.Parse(valorFinal_string, CultureInfo.InvariantCulture.NumberFormat) * (chk_operacaoCompra.Checked ? -1 : 1);
             string tipo_pagamento = cmb_tipoPagamento.Text;
 
-            Confirmar_Pedido confirmar_pedido = new Confirmar_Pedido(registros, valor, tipo_pagamento, chk_operacaoCompra.Checked);
+            Confirmar_Pedido confirmar_pedido = new Confirmar_Pedido(registros, valor, tipo_pagamento, chk_operacaoCompra.Checked, this);
             confirmar_pedido.ShowDialog();
+        }
+
+        public void clearFields()
+        {
+            txt_productName.Clear();
+            list_produtos.DataSource = null;
+            dgv_produtosSelecionados.Rows.Clear();
+            txt_valorFinal.Text = "R$ 0,00";
+            nud_quantidadeProdutos.Value = 1;
+            cmb_tipoPagamento.SelectedIndex = 0; // Reseta para o primeiro item
+            chk_operacaoCompra.Checked = false; // Reseta a checkbox de compra
         }
     }
 }

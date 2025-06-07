@@ -135,7 +135,7 @@ namespace PDV_Xavier
             db.contatos.Add(cliente);
             db.SaveChanges();
 
-            MessageBox.Show("Cliente cadastrado com sucesso");
+            MessageBox.Show("Contato cadastrado com sucesso");
         }
 
         private void tab_operacoes_Enter(object sender, EventArgs e)

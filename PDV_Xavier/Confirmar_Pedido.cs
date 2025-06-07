@@ -20,10 +20,12 @@ namespace PDV_Xavier
         private string tipo_operacao;
         private Registros[] registros;
         AppDbContext db;
+        PDV pdv;
 
 
-        public Confirmar_Pedido(Registros[] registros, float valor, string tipo_pagamento, bool is_restoque)
+        public Confirmar_Pedido(Registros[] registros, float valor, string tipo_pagamento, bool is_restoque, PDV pdv)
         {
+            this.pdv = pdv;
             this.valor = valor;
             this.tipo_pagamento = tipo_pagamento;
             this.registros = registros;
@@ -78,6 +80,11 @@ namespace PDV_Xavier
 
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
+            if(dgv_contatos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um contato antes de confirmar o pedido.");
+                return;
+            }
             int contato_selecionado = Convert.ToInt32(dgv_contatos.SelectedRows[0].Cells["id"].Value);
             var novaOperacao = db.operacoes.Add(new Operacoes
             {
@@ -100,6 +107,7 @@ namespace PDV_Xavier
             }
             db.SaveChanges();
             db.atualizarEstoque(this.registros);
+            this.pdv.clearFields();
             MessageBox.Show("Pedido confirmado com sucesso!");
 
             JsonConector jsonConector = JsonConector.getInstance();

@@ -545,7 +545,7 @@
             this.dgv_produtos.MultiSelect = false;
             this.dgv_produtos.Name = "dgv_produtos";
             this.dgv_produtos.RowHeadersVisible = false;
-            this.dgv_produtos.Size = new System.Drawing.Size(684, 332);
+            this.dgv_produtos.Size = new System.Drawing.Size(684, 343);
             this.dgv_produtos.TabIndex = 0;
             this.dgv_produtos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
             // 
@@ -570,7 +570,8 @@
             this.dgv_contatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_contatos.Location = new System.Drawing.Point(6, 6);
             this.dgv_contatos.Name = "dgv_contatos";
-            this.dgv_contatos.Size = new System.Drawing.Size(574, 333);
+            this.dgv_contatos.RowHeadersVisible = false;
+            this.dgv_contatos.Size = new System.Drawing.Size(685, 344);
             this.dgv_contatos.TabIndex = 0;
             this.dgv_contatos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
             // 

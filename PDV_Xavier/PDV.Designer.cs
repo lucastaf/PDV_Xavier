@@ -47,6 +47,7 @@
             this.chk_operacaoCompra = new System.Windows.Forms.CheckBox();
             this.lbl_valorFinal = new System.Windows.Forms.Label();
             this.lbl_tipoPagamento = new System.Windows.Forms.Label();
+            this.lbl_quantidade = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_produtosSelecionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_quantidadeProdutos)).BeginInit();
             this.SuspendLayout();
@@ -56,9 +57,9 @@
             this.list_produtos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.list_produtos.FormattingEnabled = true;
-            this.list_produtos.Location = new System.Drawing.Point(13, 99);
+            this.list_produtos.Location = new System.Drawing.Point(12, 98);
             this.list_produtos.Name = "list_produtos";
-            this.list_produtos.Size = new System.Drawing.Size(275, 251);
+            this.list_produtos.Size = new System.Drawing.Size(275, 277);
             this.list_produtos.TabIndex = 1;
             // 
             // txt_productName
@@ -134,7 +135,7 @@
             // nud_quantidadeProdutos
             // 
             this.nud_quantidadeProdutos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nud_quantidadeProdutos.Location = new System.Drawing.Point(13, 392);
+            this.nud_quantidadeProdutos.Location = new System.Drawing.Point(12, 413);
             this.nud_quantidadeProdutos.Minimum = new decimal(new int[] {
             1,
             0,
@@ -152,7 +153,7 @@
             // btn_adicionarProduto
             // 
             this.btn_adicionarProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_adicionarProduto.Location = new System.Drawing.Point(171, 378);
+            this.btn_adicionarProduto.Location = new System.Drawing.Point(170, 399);
             this.btn_adicionarProduto.Name = "btn_adicionarProduto";
             this.btn_adicionarProduto.Size = new System.Drawing.Size(117, 34);
             this.btn_adicionarProduto.TabIndex = 9;
@@ -237,11 +238,21 @@
             this.lbl_tipoPagamento.TabIndex = 16;
             this.lbl_tipoPagamento.Text = "Tipo de pagamento";
             // 
+            // lbl_quantidade
+            // 
+            this.lbl_quantidade.AutoSize = true;
+            this.lbl_quantidade.Location = new System.Drawing.Point(12, 397);
+            this.lbl_quantidade.Name = "lbl_quantidade";
+            this.lbl_quantidade.Size = new System.Drawing.Size(62, 13);
+            this.lbl_quantidade.TabIndex = 17;
+            this.lbl_quantidade.Text = "Quantidade";
+            // 
             // PDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 503);
+            this.Controls.Add(this.lbl_quantidade);
             this.Controls.Add(this.lbl_tipoPagamento);
             this.Controls.Add(this.chk_operacaoCompra);
             this.Controls.Add(this.cmb_tipoPagamento);
@@ -285,6 +296,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.Label lbl_quantidade;
     }
 }
 
