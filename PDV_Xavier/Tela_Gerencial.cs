@@ -28,7 +28,12 @@ namespace PDV_Xavier
                 }
                 if(JsonConector.getInstance().isConected)
                 {
+                    lbl_jsonConfig.Text = "Conexão com JSON estabelecida";
                     txt_valorEmCaixa.Text = $"{JsonConector.getInstance().ValorEmCaixa:C}";
+                }
+                else
+                {
+                    lbl_jsonConfig.Text = "Conexão com JSON não estabelecida";
                 }
             }
             catch
@@ -72,8 +77,11 @@ namespace PDV_Xavier
                 try
                 {
                     string caminhoJson = dialog.FileName;
+                    Console.WriteLine("Pegado caminho" + caminhoJson);
                     JsonConector conector = JsonConector.getInstance();
+                    Console.WriteLine("Pegado conector");
                     conector.setConnectionPath(caminhoJson);
+                    lbl_jsonConfig.Text = "Conexão com JSON estabelecida";
                     MessageBox.Show("Arquivo JSON conectado com sucesso, valor em caixa: " + conector.ValorEmCaixa);
                 }
                 catch (Exception ex)

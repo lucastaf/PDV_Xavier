@@ -34,8 +34,9 @@ namespace PDV_Xavier
                     throw new InvalidOperationException("Configuração não carregada corretamente.");
                 }
             }
-            set {
-                if(configuracao != null)
+            set
+            {
+                if (configuracao != null)
                 {
                     configuracao.ValorEmCaixa = value;
                     string json = JsonConvert.SerializeObject(configuracao, Formatting.Indented);
@@ -50,16 +51,25 @@ namespace PDV_Xavier
 
         private JsonConector()
         {
-            if (Properties.Settings.Default.CaminhoJson != null)
+            try
             {
-                if (File.Exists(Properties.Settings.Default.CaminhoJson))
-                {
-                    connectionPath = Properties.Settings.Default.CaminhoJson;
-                    isConected = true;
 
-                    string json = File.ReadAllText(connectionPath);
-                    this.configuracao = JsonConvert.DeserializeObject<Configuracoes>(json);
+                if (Properties.Settings.Default.CaminhoJson != null)
+                {
+                    if (File.Exists(Properties.Settings.Default.CaminhoJson))
+                    {
+                        connectionPath = Properties.Settings.Default.CaminhoJson;
+                        isConected = true;
+
+                        string json = File.ReadAllText(connectionPath);
+                        this.configuracao = JsonConvert.DeserializeObject<Configuracoes>(json);
+                    }
                 }
+            }
+            catch
+            {
+                connectionPath = null;
+                isConected = false;
             }
         }
 
@@ -74,6 +84,7 @@ namespace PDV_Xavier
 
         public void setConnectionPath(string path)
         {
+            Console.WriteLine("Setando o caminho do JSON: " + path);
             if (File.Exists(path))
             {
                 connectionPath = path;
