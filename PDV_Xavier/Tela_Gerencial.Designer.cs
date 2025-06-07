@@ -69,11 +69,11 @@
             this.lbl_bdStatus = new System.Windows.Forms.Label();
             this.btn_conectar_banco = new System.Windows.Forms.Button();
             this.tab_operacoes = new System.Windows.Forms.TabPage();
+            this.tabela_operacoes = new PDV_Xavier.TabelaOperacoes();
             this.tab_estoque = new System.Windows.Forms.TabPage();
             this.dgv_produtos = new System.Windows.Forms.DataGridView();
             this.tab_lista_contatos = new System.Windows.Forms.TabPage();
             this.dgv_contatos = new System.Windows.Forms.DataGridView();
-            this.tabela_operacoes = new PDV_Xavier.TabelaOperacoes();
             this.tabs.SuspendLayout();
             this.tab_clientes.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -521,6 +521,16 @@
             this.tab_operacoes.UseVisualStyleBackColor = true;
             this.tab_operacoes.Enter += new System.EventHandler(this.tab_operacoes_Enter);
             // 
+            // tabela_operacoes
+            // 
+            this.tabela_operacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabela_operacoes.Location = new System.Drawing.Point(6, 6);
+            this.tabela_operacoes.Name = "tabela_operacoes";
+            this.tabela_operacoes.Size = new System.Drawing.Size(685, 344);
+            this.tabela_operacoes.TabIndex = 0;
+            // 
             // tab_estoque
             // 
             this.tab_estoque.Controls.Add(this.dgv_produtos);
@@ -574,16 +584,6 @@
             this.dgv_contatos.Size = new System.Drawing.Size(685, 344);
             this.dgv_contatos.TabIndex = 0;
             this.dgv_contatos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refresh_database);
-            // 
-            // tabela_operacoes
-            // 
-            this.tabela_operacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabela_operacoes.Location = new System.Drawing.Point(6, 6);
-            this.tabela_operacoes.Name = "tabela_operacoes";
-            this.tabela_operacoes.Size = new System.Drawing.Size(685, 344);
-            this.tabela_operacoes.TabIndex = 0;
             // 
             // Tela_Gerencial
             // 

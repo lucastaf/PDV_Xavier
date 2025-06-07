@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Confirmar_Pedido));
             this.dgv_contatos = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -231,6 +232,7 @@
             this.Controls.Add(this.lbl_contato);
             this.Controls.Add(this.txt_contato);
             this.Controls.Add(this.dgv_contatos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Confirmar_Pedido";
             this.Text = "Confirmar pedido";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_contatos)).EndInit();

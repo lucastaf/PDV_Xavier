@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detalhe_operacao));
             this.dgv_regitstros = new System.Windows.Forms.DataGridView();
             this.lbl_id_header = new System.Windows.Forms.Label();
             this.lbl_tipoPagamento_header = new System.Windows.Forms.Label();
@@ -300,6 +301,7 @@
             this.Controls.Add(this.lbl_tipoPagamento_header);
             this.Controls.Add(this.lbl_id_header);
             this.Controls.Add(this.dgv_regitstros);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Detalhe_operacao";
             this.Text = "Detalhe_operacao";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_regitstros)).EndInit();
