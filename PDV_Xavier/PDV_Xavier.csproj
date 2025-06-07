@@ -49,9 +49,13 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>the-cannabis-leaf-image-3d-rendering-png.ico</ApplicationIcon>
+    <ApplicationIcon>tabler-cash-register.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PDV_Xavier.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.5" />
@@ -272,6 +276,7 @@
     <None Include="Resources\the-cannabis-leaf-image-3d-rendering-png.png" />
     <None Include="Resources\user-plus.png" />
     <None Include="Resources\search.png" />
+    <Content Include="tabler-cash-register.ico" />
     <Content Include="the-cannabis-leaf-image-3d-rendering-png.ico" />
   </ItemGroup>
   <ItemGroup>
