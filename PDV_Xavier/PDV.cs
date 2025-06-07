@@ -59,6 +59,10 @@ namespace PDV_Xavier
 
         private void btn_removerSelecao_Click(object sender, EventArgs e)
         {
+            if(dgv_produtosSelecionados.CurrentRow == null)
+            {
+                return;
+            }
             dgv_produtosSelecionados.Rows.RemoveAt(dgv_produtosSelecionados.CurrentRow.Index);
             recalcularValorTotal();
         }
